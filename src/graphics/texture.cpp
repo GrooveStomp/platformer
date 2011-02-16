@@ -15,7 +15,7 @@ namespace TextureUtils
         GLenum texture_format;
         GLint num_colors;
 
-        glGenTextures(1, texture_id);
+        glGenTextures(1, &texture_id);
 
         SDL_Surface *surface = IMG_Load(path);
         if (!surface)
@@ -64,7 +64,7 @@ namespace TextureUtils
         glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_REPLACE);
 
         TextureState result = TextureState(
-            texture_id, surface->width, surface->height
+            texture_id, surface->w, surface->h
         );
 
         if (surface)
@@ -79,7 +79,7 @@ namespace TextureUtils
     //!
     void DeleteTexture(const TextureState &t)
     {
-        glDeleteTextures(1, t.id);
+        glDeleteTextures(1, &(t.id));
     }
 }
 

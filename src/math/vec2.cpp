@@ -29,7 +29,7 @@ namespace Vec2Utils
 
     Vec2 Divide(const Vec2 &v, const float amount)
     {
-        float x = numerator.x / denominator.x;
+        return Vec2(v.x / amount, v.y / amount);
     }
 
     float DotProduct(const Vec2 &l, const Vec2 &r)

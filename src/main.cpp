@@ -1,14 +1,11 @@
-//-----------------------------------------------------------------------------
-// Author: Aaron Oman
-// Contact: aaron.oman@gmail.com
-// Date: Oct 19 2009
-//-----------------------------------------------------------------------------
+#include "graphics/font.h"
+#include "graphics/texture.h"
+#include "math/vec2.h"
+#include "world/player.h"
 
-#include "system/application.h"
+#include <stdio.h>
 
 int main(int argc, char *argv[])
 {
-    using namespace fob::system;
-    Application game("data/cfg/setup.cfg");
-    return game.Run();
+    printf("Hello\n");
 }

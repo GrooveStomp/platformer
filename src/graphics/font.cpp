@@ -1,5 +1,9 @@
 #include "graphics/font.h"
+
 #include "graphics/texture.h"
+
+#include <SDL_opengl.h>
+#include <string.h>
 
 namespace fob {
     namespace graphics {
@@ -86,17 +90,24 @@ namespace FontUtils
     // Utility function.
     // This is called repeatedly by Draw().
     //
-    void DrawGlyph(const char c, const int offset, const TextureState &t)
+    void DrawGlyph(const char c, const int offset, const char char_width, const char char_height, const TextureState &t)
     {
         float x = GetFontXCoord(c, t.width);
         float y = GetFontYCoord(c, t.height);
         float w = GetFontWidth(c, t.width);
         float h = GetFontHeight(c, t.height);
 
-        glTexCoord2f(x,   y);   glVertex3f(offset * i * cw,      0 + ch, 0);
-        glTexCoord2f(x,   y+h); glVertex3f(offset * i * cw,      0,      0);
-        glTexCoord2f(x+w, y+h); glVertex3f(offset * i * cw + cw, 0,      0);
-        glTexCoord2f(x+w, y);   glVertex3f(offset * i * cw + cw, 0 + ch, 0);
+        glTexCoord2f(x, y);
+        glVertex3f(offset * char_width, 0 + char_height, 0);
+
+        glTexCoord2f(x, y+h);
+        glVertex3f(offset * char_width, 0, 0);
+
+        glTexCoord2f(x+w, y+h);
+        glVertex3f(offset * char_width + char_width, 0, 0);
+
+        glTexCoord2f(x+w, y);
+        glVertex3f(offset * char_width + char_width, 0 + char_height, 0);
     }
 
 
@@ -119,33 +130,33 @@ namespace FontUtils
         glTranslatef(f.position.x, f.position.y, 0);
 
         float char_width = 0.666666 * f.size;
-        float ch = t.scale;
-        float cw = (ch / t.size) * char_width;
+        float ch = f.scale;
+        float cw = (ch / f.size) * char_width;
 
         glBegin(GL_QUADS);
         glColor4f(f.color.r, f.color.g, f.color.b, f.color.a);
 
         if (FontAlign::Left == f.align)
         {
-            for (int i=0; i < strlen(str); ++i)
+            for (unsigned int i=0; i < strlen(text); ++i)
             {
-                DrawGlyph(str[i], i, t);
+                DrawGlyph(text[i], i, cw, ch, t);
             }
         }
         else if (FontAlign::Center == f.align)
         {
-            int half = strlen(str) / 2;
-            for (int i=0; i < strlen(str); ++i)
+            int half = strlen(text) / 2;
+            for (unsigned int i=0; i < strlen(text); ++i)
             {
-                DrawGlyph(str[i], -(half - i), t);
+                DrawGlyph(text[i], -(half - i), cw, ch, t);
             }
         }
         else if (FontAlign::Right == f.align)
         {
-            int size = strlen(str) - 1;
-            for (int i=0; i < strlen(str); ++i)
+            int size = strlen(text) - 1;
+            for (unsigned int i=0; i < strlen(text); ++i)
             {
-                DrawGlyph(str[i], -(size - i) - 1, t);
+                DrawGlyph(text[i], -(size - i) - 1, cw, ch, t);
             }
         }
 

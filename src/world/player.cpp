@@ -1,4 +1,8 @@
-#include "inc/world/player.h"
+#include "world/player.h"
+
+#include "world/gamestate.h"
+
+#include <stdio.h>
 
 namespace fob {
     namespace world {

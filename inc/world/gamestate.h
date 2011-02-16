@@ -1,8 +1,8 @@
 #ifndef FOB_WORLD_GAMESTATE_H
 #define FOB_WORLD_GAMESTATE_H
 
-#include "inc/input/actions.h"
-#include "inc/world/player.h"
+#include "input/input.h"
+#include "world/player.h"
 
 namespace fob {
     namespace world {
@@ -12,10 +12,10 @@ namespace fob {
 //!
 struct GameState
 {
-    GameState(){};
-    InputActions actions;
-    Player player;
-}
+    GameState() {};
+    fob::input::InputState actions;
+    fob::world::PlayerState player;
+};
 
     } // namespace world
 } // namespace fob

@@ -1,16 +1,19 @@
 #ifndef FOB_WORLD_PLAYER_H
 #define FOB_WORLD_PLAYER_H
 
+#include "math/vec2.h"
+
 namespace fob {
     namespace world {
+        struct GameState;
 
 //----------------------------------------------------------------------------
 // Data definitiion for the player.
 //
 struct PlayerState
 {
-    Player(): position(0,0), rotation(0), width(1), height(1) {}
-    Vec2 pos;
+    PlayerState(): position(0,0), rotation(0), width(1), height(1) {}
+    fob::math::Vec2 position;
     float rotation;
     float width;
     float height;

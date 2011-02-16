@@ -8,7 +8,7 @@ namespace fob {
 //
 struct TextureState
 {
-    TextureState(unsigned int iid = 0, float iwidth = 0, float iheight = 0):
+    TextureState(const unsigned int iid = 0, const float iwidth = 0, const float iheight = 0):
         id(iid), width(iwidth), height(iheight) {}
     unsigned int id;
     float width;

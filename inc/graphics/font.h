@@ -3,6 +3,7 @@
 
 #include "math/vec2.h"
 #include "graphics/color.h"
+#include "graphics/texture.h"
 
 namespace fob {
     namespace graphics {
@@ -28,9 +29,9 @@ struct FontState
         color(), position(), align(FontAlign::Left), size(11), scale(11) {}
     fob::graphics::Color color;
     fob::math::Vec2 position;
-    FontAlign align;
-    float scale;
+    FontAlign::Enum align;
     float size;
+    float scale;
 };
 
 //----------------------------------------------------------------------------

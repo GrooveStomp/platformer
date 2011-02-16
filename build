@@ -1,9 +1,13 @@
 #!/bin/bash
 
 options="-Wall"
-out="demo"
+out="platformer"
 args=("$@")
 opt=${args[0]}
+# All Sane Systems:
+# link_flags="-lGL -lGLU -lglut"
+# OSX:
+link_flags="-framework OpenGL"
 if [ -z $opt ]; then
     opt="normal"
 fi
@@ -16,42 +20,14 @@ g++ -o \
         ${out} ${options} \
         src/main.cpp \
         src/math/vec2.cpp \
-        src/math/vec4.cpp \
-        src/world/model/object.cpp \
-        src/world/control/button.cpp \
-        src/world/control/planet.cpp \
-        src/world/control/player.cpp \
-        src/world/control/shot.cpp \
-        src/world/control/spaceman.cpp \
-        src/world/view/button.cpp \
-        src/world/view/particle.cpp \
-        src/world/view/player.cpp \
-        src/world/view/planet.cpp \
-        src/world/view/shot.cpp \
-        src/world/view/sprite.cpp \
-        src/world/view/spaceman.cpp \
-        src/system/application.cpp \
-        src/system/config.cpp \
-        src/system/font.cpp \
-        src/system/frontendobjectmanager.cpp \
-        src/system/ingameobjectmanager.cpp \
-        src/system/inputmanager.cpp \
-        src/system/interfacemanager.cpp \
-        src/system/messagequeue.cpp \
-        src/system/soundmanager.cpp \
-        src/system/texturemanager.cpp \
+        src/world/player.cpp \
+        src/graphics/font.cpp \
+        src/graphics/texture.cpp \
         src/system/timer.cpp \
         src/system/unique.cpp \
-        src/interface/endgame.cpp \
-        src/interface/frontend.cpp \
-        src/interface/ingame.cpp \
-        src/interface/hud.cpp \
         -I./inc\
-        -lGL \
-        -lGLEW \
+        ${link_flags} \
         -lSDL_image \
         -lSDL_mixer \
-        `pkg-config --libs libconfig++` \
-        `pkg-config --cflags libconfig++` \
         `sdl-config --libs` \
         `sdl-config --cflags`
