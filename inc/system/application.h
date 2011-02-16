@@ -1,30 +1,33 @@
-//-----------------------------------------------------------------------------
-// Author: Aaron Oman
-// Contact: aaron.oman@gmail.com
-// Date: Oct 19 2009
-//-----------------------------------------------------------------------------
+#ifndef FOB_SYSTEM_APPLICATION_H
+#define FOB_SYSTEM_APPLICATION_H
 
-#ifndef APPLICATION_H
-#define APPLICATION_H
-
-#include "timer.h"
-#include <string>
+#include "system/timer.h"
 
 namespace fob {
+    namespace world {
+        struct GameState;
+    }
     namespace system {
 
-        class Application {
-            public:
-                Application(std::string path);
-                int Run();
+//-----------------------------------------------------------------------------
+//
+struct ApplicationState
+{
+    ApplicationState(const int iwidth = 0, const int iheight = 0):
+        width(iwidth), height(iheight), running(false), skip_fe(false) {}
+    int width;
+    int height;
+    fob::system::Timer timer;
+    bool running;
+    bool skip_fe;
+};
 
-            private:
-                int _width;
-                int _height;
-                Timer _timer;
-                bool _running;
-                bool _skip_fe;
-        };
+//-----------------------------------------------------------------------------
+//
+namespace ApplicationUtils
+{
+    bool Run(fob::system::ApplicationState &app, fob::world::GameState &state);
+}
 
     } // namespace system
 } // namespace fob

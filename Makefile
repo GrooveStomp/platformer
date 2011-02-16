@@ -16,7 +16,8 @@ SOURCES=src/main.cpp \
         src/graphics/font.cpp \
         src/graphics/texture.cpp \
         src/system/timer.cpp \
-        src/system/unique.cpp
+        src/system/unique.cpp \
+		src/system/application.cpp
 OBJECTS=$(SOURCES:.cpp=.o)
 CC=g++
 CFLAGS=-Wall -c $(DEBUG)
