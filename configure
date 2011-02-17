@@ -1,0 +1,121 @@
+#!/usr/bin/python
+
+# ./configure --platform=linux
+#   > PLATFORM_LFLAGS=-lGL
+
+# ./configure --platform=osx
+#   > PLATFORM_LFLAGS=-framework OpenGL
+
+# ./configure --debug
+#   > DEBUG=-g -O0 -fno-inline
+#   > EXECUTABLE=platformerd
+#   > DEBUG_DEFINES=-DFOB_LOGGING -DFOB_ASSERTS_ENABLED
+
+import subprocess
+import getopt
+import sys
+import re
+
+#-----------------------------------------------------------------------------
+#
+def GetPlatformLinkerFlags(platform):
+    if "linux" == platform:
+        return "-lGL"
+    elif "osx" == platform:
+        return "-framework OpenGL"
+    else:
+        return "-lGL"
+
+#-----------------------------------------------------------------------------
+# Return a string that hopefully represents what the platform is.
+#
+def GuessPlatform():
+    os = subprocess.Popen(
+        ["uname", "-s"],
+        stdout = subprocess.PIPE
+    ).communicate()[0].lower().strip()
+
+    if os == "darwin":
+        return "osx"
+
+    elif os == "linux":
+        return "linux"
+
+    else:
+        return "windows"
+
+#-----------------------------------------------------------------------------
+# Print out some useful text explaining how to use this script.
+#
+def Usage():
+    print "usage: " + __file__ + " [options]"
+    print "options:"
+    print "\t[-d|--debug] configure for a debug build"
+    print "\t[-p|--platform] specify which platform to build for.  One of osx, linux or windows."
+
+#-----------------------------------------------------------------------------
+# Main
+#-----------------------------------------------------------------------------
+if __name__ == "__main__":
+    platform = ""
+    debug = False
+    makefile = "makefile"
+
+    #-------------------------------------------------------------------------
+    # Process all of our command-line options.
+    #
+    try:
+        opts, args = getopt.getopt(
+            sys.argv[1:],
+            "hpd",
+            ["help", "platform", "debug"]
+        )
+    except getopt.GetoptError, err:
+        print str(err)
+        Usage()
+        sys.exit(2)
+
+    for option, argument in opts:
+        if option in ("-h", "--help"):
+            Usage()
+            sys.exit()
+        elif option in ("-p", "--platform"):
+            platform = argument.lower()
+        elif option in ("-d", "--debug"):
+            debug = True;
+        else:
+            assert False, "unhandled option"
+    #
+    # Finish processing command-line options.
+    #-------------------------------------------------------------------------
+
+    # Ensure that our platform is set before updating our Makefile.
+    if "" == platform:
+        platform = GuessPlatform()
+    link_flags = GetPlatformLinkerFlags(platform)
+
+    # Replace our PLATFORM_LFLAGS with the appropriate value.
+    lines = open(makefile).readlines()
+    out = open(makefile, "w")
+    for line in lines:
+        if re.match("PLATFORM_LFLAGS=", line):
+            line = "PLATFORM_LFLAGS=" + link_flags + "\n"
+        out.write(line)
+    out.close()
+
+    if debug:
+        # Setup our DEBUG values.
+        lines = open(makefile).readlines()
+        out = open(makefile, "w")
+        for line in lines:
+            #   > DEBUG=-g -O0 -fno-inline
+            if re.match("DEBUG=", line):
+                line = "DEBUG=-g -O0 -fno-inline\n"
+            #   > DEBUG_DEFINES=-DFOB_LOGGING -DFOB_ASSERTS_ENABLED
+            elif re.match("DEBUG_DEFINES=", line):
+                line = "DEBUG_DEFINES=-DFOB_LOGGING -DFOB_ASSERTS_ENABLED\n"
+            #   > EXECUTABLE=platformerd
+            elif re.match("EXECUTABLE=", line):
+                line = "EXECUTABLE=platformerd"
+            out.write(line)
+        out.close()
