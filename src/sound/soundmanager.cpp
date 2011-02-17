@@ -1,66 +1,47 @@
-//-----------------------------------------------------------------------------
-// Author: Aaron Oman
-// Contact: aaron.oman@gmail.com
-// Date: Oct 19 2009
-//-----------------------------------------------------------------------------
-
 #include "system/soundmanager.h"
-
-#include "system/config.h"
-#include <iostream>
 
 namespace fob {
     namespace system {
 
-        Mix_Chunk* SoundObject::Data() {
-            return _sound;
-        }
+//----------------------------------------------------------------------------
+// Default constructor.
+//
+SoundState::SoundState()
+{
+    data = NULL;
+}
 
-        SoundObject::SoundObject(std::string name) {
-            _name = name;
-            _sound = Mix_LoadWAV( name.c_str() );
-            if (_sound == NULL) {
-                printf("Error loading file %s: %s\n", name.c_str(), Mix_GetError());
-            }
-        }
+//----------------------------------------------------------------------------
+// Most common constructor where we specify the sound file to load.
+//
+SoundState::SoundState(const char *path)
+{
+    data = Mix_LoadWAV(path);
+    if (!data)
+    {
+        printf("Error loading file %s: %s\n", path, Mix_GetError());
+        data = NULL;
+    }
+}
 
-        SoundObject::~SoundObject() {
-            Mix_FreeChunk(_sound);
-        }
+//----------------------------------------------------------------------------
+// Destructor which garantees the data gets cleaned up properly.
+//
+SoundState::~SoundState()
+{
+    Mix_FreeChunk(data);
+    data = NULL;
+}
 
-        void SoundObject::AddReference(unsigned int id) {
-            if (!HasReference(id)) {
-                _references.push_back(id);
-            }
-        }
-
-        void SoundObject::RemoveReference(unsigned int id) {
-            unsigned int i=0, found=0;
-            for (i=0; i<_references.size(); ++i) {
-                if (_references[i] == id) {
-                    found = 1;
-                    break;
-                }
-            }
-            if (found) _references.erase(_references.begin() + i);
-        }
-
-        bool SoundObject::HasReference(unsigned int id) {
-            for (unsigned int i=0; i<_references.size(); ++i) {
-                if (_references[i] == id) {
-                    return true;
-                }
-            }
-            return false;
-        }
-
-        bool SoundObject::HasReferences() {
-            return _references.size();
-        }
-
-        std::string SoundObject::Name() {
-            return _name;
-        }
+namespace SoundUtils
+{
+    //------------------------------------------------------------------------
+    void Play(const SoundState &sound);
+    void Loop(const SoundState &sound);
+    void Stop(const SoundState &sound);
+    void Pause(const SoundState &sound);
+    void Unpause(const SoundState &sound);
+}
 
 // ----------------------------------------------------------------------------
 

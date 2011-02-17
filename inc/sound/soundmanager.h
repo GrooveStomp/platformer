@@ -1,11 +1,5 @@
-//-----------------------------------------------------------------------------
-// Author: Aaron Oman
-// Contact: aaron.oman@gmail.com
-// Date: Oct 19 2009
-//-----------------------------------------------------------------------------
-
-#ifndef SOUND_MANAGER_H
-#define SOUND_MANAGER_H
+#ifndef FOB_SOUND_MANAGER_H
+#define FOB_SOUND_MANAGER_H
 
 #include <map>
 #include <SDL_mixer.h>
@@ -14,6 +8,23 @@
 
 namespace fob {
     namespace system {
+
+struct SoundState
+{
+    SoundState();
+    SoundState(const char *path);
+    ~SoundState();
+    Mix_Chunk *data;
+};
+
+namespace SoundUtils
+{
+    void Play(const SoundState &sound);
+    void Loop(const SoundState &sound);
+    void Stop(const SoundState &sound);
+    void Pause(const SoundState &sound);
+    void Unpause(const SoundState &sound);
+}
 
         class SoundObject {
             public:
