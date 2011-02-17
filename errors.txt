@@ -1,0 +1,108 @@
+Creating ApplicationState
+Creating GameState
+Running ApplicationState with GameState
+2011-02-17 08:44:34.252 platformer[34690:903] *** __NSAutoreleaseNoPool(): Object 0x1005116f0 of class NSCFNumber autoreleased with no pool in place - just leaking
+2011-02-17 08:44:34.254 platformer[34690:903] *** __NSAutoreleaseNoPool(): Object 0x1004005d0 of class NSCFNumber autoreleased with no pool in place - just leaking
+2011-02-17 08:44:34.255 platformer[34690:903] *** __NSAutoreleaseNoPool(): Object 0x1004009e0 of class NSCFNumber autoreleased with no pool in place - just leaking
+2011-02-17 08:44:34.256 platformer[34690:903] *** __NSAutoreleaseNoPool(): Object 0x113100140 of class NSCFDictionary autoreleased with no pool in place - just leaking
+2011-02-17 08:44:34.256 platformer[34690:903] *** __NSAutoreleaseNoPool(): Object 0x7fff70c9db78 of class NSCFString autoreleased with no pool in place - just leaking
+2011-02-17 08:44:34.257 platformer[34690:903] *** __NSAutoreleaseNoPool(): Object 0x100400c90 of class NSCFNumber autoreleased with no pool in place - just leaking
+2011-02-17 08:44:34.258 platformer[34690:903] *** __NSAutoreleaseNoPool(): Object 0x7fff70ca8dd8 of class NSCFString autoreleased with no pool in place - just leaking
+2011-02-17 08:44:34.258 platformer[34690:903] *** __NSAutoreleaseNoPool(): Object 0x100400a00 of class NSCFNumber autoreleased with no pool in place - just leaking
+2011-02-17 08:44:34.259 platformer[34690:903] *** __NSAutoreleaseNoPool(): Object 0x7fff70ca8eb8 of class NSCFString autoreleased with no pool in place - just leaking
+2011-02-17 08:44:34.259 platformer[34690:903] *** __NSAutoreleaseNoPool(): Object 0x100400c70 of class NSCFNumber autoreleased with no pool in place - just leaking
+2011-02-17 08:44:34.260 platformer[34690:903] *** __NSAutoreleaseNoPool(): Object 0x7fff70ca94b8 of class NSCFString autoreleased with no pool in place - just leaking
+2011-02-17 08:44:34.261 platformer[34690:903] *** __NSAutoreleaseNoPool(): Object 0x100400c70 of class NSCFNumber autoreleased with no pool in place - just leaking
+2011-02-17 08:44:34.261 platformer[34690:903] *** __NSAutoreleaseNoPool(): Object 0x7fff70ca8eb8 of class NSCFString autoreleased with no pool in place - just leaking
+2011-02-17 08:44:34.262 platformer[34690:903] *** __NSAutoreleaseNoPool(): Object 0x7fff70ca94b8 of class NSCFString autoreleased with no pool in place - just leaking
+2011-02-17 08:44:34.263 platformer[34690:903] *** __NSAutoreleaseNoPool(): Object 0x7fff70ca8eb8 of class NSCFString autoreleased with no pool in place - just leaking
+2011-02-17 08:44:34.263 platformer[34690:903] *** __NSAutoreleaseNoPool(): Object 0x7fff70ca94b8 of class NSCFString autoreleased with no pool in place - just leaking
+2011-02-17 08:44:34.264 platformer[34690:903] *** __NSAutoreleaseNoPool(): Object 0x7fff70ca8eb8 of class NSCFString autoreleased with no pool in place - just leaking
+2011-02-17 08:44:34.264 platformer[34690:903] *** __NSAutoreleaseNoPool(): Object 0x7fff70ca8eb8 of class NSCFString autoreleased with no pool in place - just leaking
+2011-02-17 08:44:34.265 platformer[34690:903] *** __NSAutoreleaseNoPool(): Object 0x7fff70ca8eb8 of class NSCFString autoreleased with no pool in place - just leaking
+2011-02-17 08:44:34.265 platformer[34690:903] *** __NSAutoreleaseNoPool(): Object 0x100503280 of class NSCFNumber autoreleased with no pool in place - just leaking
+2011-02-17 08:44:34.269 platformer[34690:903] *** __NSAutoreleaseNoPool(): Object 0x100405200 of class __NSFontTypefaceInfo autoreleased with no pool in place - just leaking
+2011-02-17 08:44:34.270 platformer[34690:903] *** __NSAutoreleaseNoPool(): Object 0x100405710 of class NSAffineTransform autoreleased with no pool in place - just leaking
+2011-02-17 08:44:34.271 platformer[34690:903] *** __NSAutoreleaseNoPool(): Object 0x1004057e0 of class NSFont autoreleased with no pool in place - just leaking
+2011-02-17 08:44:34.271 platformer[34690:903] *** __NSAutoreleaseNoPool(): Object 0x100405de0 of class NSFont autoreleased with no pool in place - just leaking
+2011-02-17 08:44:34.277 platformer[34690:903] *** __NSAutoreleaseNoPool(): Object 0x100407b10 of class NSCFArray autoreleased with no pool in place - just leaking
+2011-02-17 08:44:34.278 platformer[34690:903] *** __NSAutoreleaseNoPool(): Object 0x100408270 of class NSCFArray autoreleased with no pool in place - just leaking
+2011-02-17 08:44:34.278 platformer[34690:903] *** __NSAutoreleaseNoPool(): Object 0x100408640 of class NSCFSet autoreleased with no pool in place - just leaking
+2011-02-17 08:44:34.279 platformer[34690:903] *** __NSAutoreleaseNoPool(): Object 0x100408710 of class NSCFArray autoreleased with no pool in place - just leaking
+2011-02-17 08:44:34.279 platformer[34690:903] *** __NSAutoreleaseNoPool(): Object 0x100408750 of class NSCFArray autoreleased with no pool in place - just leaking
+2011-02-17 08:44:34.280 platformer[34690:903] *** __NSAutoreleaseNoPool(): Object 0x1004089b0 of class NSCFSet autoreleased with no pool in place - just leaking
+2011-02-17 08:44:34.281 platformer[34690:903] *** __NSAutoreleaseNoPool(): Object 0x7fff70f58910 of class NSCFString autoreleased with no pool in place - just leaking
+2011-02-17 08:44:34.282 platformer[34690:903] *** __NSAutoreleaseNoPool(): Object 0x7fff70f646f0 of class NSCFString autoreleased with no pool in place - just leaking
+2011-02-17 08:44:34.282 platformer[34690:903] *** __NSAutoreleaseNoPool(): Object 0x7fff70f66590 of class NSCFString autoreleased with no pool in place - just leaking
+2011-02-17 08:44:34.283 platformer[34690:903] *** __NSAutoreleaseNoPool(): Object 0x1005138d0 of class NSCFString autoreleased with no pool in place - just leaking
+2011-02-17 08:44:34.283 platformer[34690:903] *** __NSAutoreleaseNoPool(): Object 0x10051c040 of class NSCFString autoreleased with no pool in place - just leaking
+2011-02-17 08:44:34.283 platformer[34690:903] *** __NSAutoreleaseNoPool(): Object 0x7fff70f638d0 of class NSCFString autoreleased with no pool in place - just leaking
+2011-02-17 08:44:34.284 platformer[34690:903] *** __NSAutoreleaseNoPool(): Object 0x7fff70f5ab30 of class NSCFString autoreleased with no pool in place - just leaking
+2011-02-17 08:44:34.339 platformer[34690:903] *** __NSAutoreleaseNoPool(): Object 0x7fff70f5bed0 of class NSCFString autoreleased with no pool in place - just leaking
+2011-02-17 08:44:34.341 platformer[34690:903] *** __NSAutoreleaseNoPool(): Object 0x7fff70f65450 of class NSCFString autoreleased with no pool in place - just leaking
+2011-02-17 08:44:34.341 platformer[34690:903] *** __NSAutoreleaseNoPool(): Object 0x7fff70f63dd0 of class NSCFString autoreleased with no pool in place - just leaking
+2011-02-17 08:44:34.342 platformer[34690:903] *** __NSAutoreleaseNoPool(): Object 0x113100560 of class NSCFString autoreleased with no pool in place - just leaking
+2011-02-17 08:44:34.342 platformer[34690:903] *** __NSAutoreleaseNoPool(): Object 0x7fff70f57830 of class NSCFString autoreleased with no pool in place - just leaking
+2011-02-17 08:44:34.343 platformer[34690:903] *** __NSAutoreleaseNoPool(): Object 0x100408aa0 of class NSCFString autoreleased with no pool in place - just leaking
+2011-02-17 08:44:34.343 platformer[34690:903] *** __NSAutoreleaseNoPool(): Object 0x100408ae0 of class NSCFString autoreleased with no pool in place - just leaking
+2011-02-17 08:44:34.344 platformer[34690:903] *** __NSAutoreleaseNoPool(): Object 0x10051d200 of class NSCFString autoreleased with no pool in place - just leaking
+2011-02-17 08:44:34.344 platformer[34690:903] *** __NSAutoreleaseNoPool(): Object 0x100405de0 of class NSFont autoreleased with no pool in place - just leaking
+2011-02-17 08:44:34.345 platformer[34690:903] *** __NSAutoreleaseNoPool(): Object 0x7fff70f65e30 of class NSCFString autoreleased with no pool in place - just leaking
+2011-02-17 08:44:34.346 platformer[34690:903] *** __NSAutoreleaseNoPool(): Object 0x7fff70f57e70 of class NSCFString autoreleased with no pool in place - just leaking
+2011-02-17 08:44:34.346 platformer[34690:903] *** __NSAutoreleaseNoPool(): Object 0x100400b20 of class NSCFNumber autoreleased with no pool in place - just leaking
+2011-02-17 08:44:34.347 platformer[34690:903] *** __NSAutoreleaseNoPool(): Object 0x10040a8a0 of class NSCalibratedWhiteColor autoreleased with no pool in place - just leaking
+2011-02-17 08:44:34.348 platformer[34690:903] *** __NSAutoreleaseNoPool(): Object 0x113100d10 of class NSCFArray autoreleased with no pool in place - just leaking
+2011-02-17 08:44:34.348 platformer[34690:903] *** __NSAutoreleaseNoPool(): Object 0x10051ddc0 of class NSCFDictionary autoreleased with no pool in place - just leaking
+2011-02-17 08:44:34.359 platformer[34690:903] *** __NSAutoreleaseNoPool(): Object 0x100413450 of class NSMutableParagraphStyle autoreleased with no pool in place - just leaking
+2011-02-17 08:44:34.360 platformer[34690:903] *** __NSAutoreleaseNoPool(): Object 0x100413510 of class NSCFDictionary autoreleased with no pool in place - just leaking
+2011-02-17 08:44:34.361 platformer[34690:903] *** __NSAutoreleaseNoPool(): Object 0x100521750 of class NSCFArray autoreleased with no pool in place - just leaking
+2011-02-17 08:44:34.362 platformer[34690:903] *** __NSAutoreleaseNoPool(): Object 0x100413d60 of class __NSFontTypefaceInfo autoreleased with no pool in place - just leaking
+2011-02-17 08:44:34.362 platformer[34690:903] *** __NSAutoreleaseNoPool(): Object 0x1004141b0 of class NSFont autoreleased with no pool in place - just leaking
+2011-02-17 08:44:34.363 platformer[34690:903] *** __NSAutoreleaseNoPool(): Object 0x1004142e0 of class NSFont autoreleased with no pool in place - just leaking
+2011-02-17 08:44:34.364 platformer[34690:903] *** __NSAutoreleaseNoPool(): Object 0x7fff70c92538 of class NSCFString autoreleased with no pool in place - just leaking
+2011-02-17 08:44:34.364 platformer[34690:903] *** __NSAutoreleaseNoPool(): Object 0x1004120a0 of class _NSThemeCloseWidget autoreleased with no pool in place - just leaking
+2011-02-17 08:44:34.365 platformer[34690:903] *** __NSAutoreleaseNoPool(): Object 0x100412280 of class NSCFArray autoreleased with no pool in place - just leaking
+2011-02-17 08:44:34.366 platformer[34690:903] *** __NSAutoreleaseNoPool(): Object 0x1004142e0 of class NSFont autoreleased with no pool in place - just leaking
+2011-02-17 08:44:34.367 platformer[34690:903] *** __NSAutoreleaseNoPool(): Object 0x7fff70c92538 of class NSCFString autoreleased with no pool in place - just leaking
+2011-02-17 08:44:34.367 platformer[34690:903] *** __NSAutoreleaseNoPool(): Object 0x100414f30 of class _NSThemeWidget autoreleased with no pool in place - just leaking
+2011-02-17 08:44:34.368 platformer[34690:903] *** __NSAutoreleaseNoPool(): Object 0x100407210 of class NSCFArray autoreleased with no pool in place - just leaking
+2011-02-17 08:44:34.369 platformer[34690:903] *** __NSAutoreleaseNoPool(): Object 0x1004142e0 of class NSFont autoreleased with no pool in place - just leaking
+2011-02-17 08:44:34.369 platformer[34690:903] *** __NSAutoreleaseNoPool(): Object 0x7fff70c92538 of class NSCFString autoreleased with no pool in place - just leaking
+2011-02-17 08:44:34.370 platformer[34690:903] *** __NSAutoreleaseNoPool(): Object 0x100415270 of class _NSThemeWidget autoreleased with no pool in place - just leaking
+2011-02-17 08:44:34.371 platformer[34690:903] *** __NSAutoreleaseNoPool(): Object 0x100414c40 of class NSCFArray autoreleased with no pool in place - just leaking
+2011-02-17 08:44:34.371 platformer[34690:903] *** __NSAutoreleaseNoPool(): Object 0x1005216a0 of class NSTrackingArea autoreleased with no pool in place - just leaking
+Thu Feb 17 08:44:34 Aaron-Omans-MacBook-Pro.local platformer[34690] <Error>: kCGErrorInvalidConnection: CGSGetCurrentCursorLocation: Invalid connection
+Thu Feb 17 08:44:34 Aaron-Omans-MacBook-Pro.local platformer[34690] <Error>: kCGErrorFailure: Set a breakpoint @ CGErrorBreakpoint() to catch errors as they are logged.
+2011-02-17 08:44:34.469 platformer[34690:903] *** __NSAutoreleaseNoPool(): Object 0x1131007c0 of class NSTrackingArea autoreleased with no pool in place - just leaking
+Thu Feb 17 08:44:34 Aaron-Omans-MacBook-Pro.local platformer[34690] <Error>: kCGErrorInvalidConnection: CGSGetCurrentCursorLocation: Invalid connection
+Thu Feb 17 08:44:34 Aaron-Omans-MacBook-Pro.local platformer[34690] <Error>: kCGErrorInvalidConnection: CGSNewWindowWithOpaqueShape: Invalid connection
+2011-02-17 08:44:34.470 platformer[34690:903] *** __NSAutoreleaseNoPool(): Object 0x1131010a0 of class NSCFString autoreleased with no pool in place - just leaking
+2011-02-17 08:44:34.470 platformer[34690:903] *** __NSAutoreleaseNoPool(): Object 0x1131008a0 of class NSException autoreleased with no pool in place - just leaking
+2011-02-17 08:44:34.470 platformer[34690:903] *** __NSAutoreleaseNoPool(): Object 0x1131012a0 of class _NSCallStackArray autoreleased with no pool in place - just leaking
+2011-02-17 08:44:34.470 platformer[34690:903] *** __NSAutoreleaseNoPool(): Object 0x113101350 of class _NSCallStackArray autoreleased with no pool in place - just leaking
+2011-02-17 08:44:34.470 platformer[34690:903] *** __NSAutoreleaseNoPool(): Object 0x1131014a0 of class NSCFString autoreleased with no pool in place - just leaking
+2011-02-17 08:44:34.472 platformer[34690:903] *** __NSAutoreleaseNoPool(): Object 0x114802a00 of class NSCFString autoreleased with no pool in place - just leaking
+2011-02-17 08:44:34.472 platformer[34690:903] *** __NSAutoreleaseNoPool(): Object 0x113101540 of class NSConcreteMutableData autoreleased with no pool in place - just leaking
+2011-02-17 08:44:34.472 platformer[34690:903] *** Terminating app due to uncaught exception 'NSInternalInconsistencyException', reason: 'Error (1002) creating CGSWindow'
+*** Call stack at first throw:
+(
+    0   CoreFoundation                      0x00007fff87a697b4 __exceptionPreprocess + 180
+    1   libobjc.A.dylib                     0x00007fff831c70f3 objc_exception_throw + 45
+    2   CoreFoundation                      0x00007fff87a695d7 +[NSException raise:format:arguments:] + 103
+    3   CoreFoundation                      0x00007fff87a69564 +[NSException raise:format:] + 148
+    4   AppKit                              0x00007fff8641bee2 _NSCreateWindowWithOpaqueShape2 + 473
+    5   AppKit                              0x00007fff863b0489 -[NSWindow _commonAwake] + 1214
+    6   AppKit                              0x00007fff863ad16e -[NSWindow _commonInitFrame:styleMask:backing:defer:] + 1501
+    7   AppKit                              0x00007fff863abdfa -[NSWindow _initContent:styleMask:backing:defer:contentView:] + 1396
+    8   AppKit                              0x00007fff863ab883 -[NSWindow initWithContentRect:styleMask:backing:defer:] + 42
+    9   libSDL-1.2.0.dylib                  0x000000010003fcdd -[SDL_QuartzWindow initWithContentRect:styleMask:backing:defer:] + 285
+    10  libSDL-1.2.0.dylib                  0x000000010003d084 QZ_SetVideoMode + 1076
+    11  libSDL-1.2.0.dylib                  0x0000000100033e6a SDL_SetVideoMode + 602
+    12  platformer                          0x00000001000021e7 _ZN3fob6system16ApplicationUtils4InitERNS0_16ApplicationStateE + 145
+    13  platformer                          0x0000000100002253 _ZN3fob6system16ApplicationUtils3RunERNS0_16ApplicationStateERNS_5world9GameStateE + 25
+    14  platformer                          0x00000001000011cc main + 92
+    15  platformer                          0x0000000100001168 start + 52
+    16  ???                                 0x0000000000000001 0x0 + 1
+)
+terminate called after throwing an instance of 'NSException'
+Abort trap
