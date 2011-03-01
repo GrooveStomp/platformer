@@ -1,3 +1,5 @@
+#if PLATFORM != OSX
+
 #include "graphics/font.h"
 #include "graphics/texture.h"
 #include "math/vec2.h"
@@ -10,8 +12,6 @@
 
 int main(int argc, char *argv[])
 {
-//    NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
-
     printf("Creating ApplicationState\n");
     fob::system::ApplicationState app(320, 240);
 
@@ -20,6 +20,6 @@ int main(int argc, char *argv[])
 
     printf("Running ApplicationState with GameState\n");
     fob::system::ApplicationUtils::Run(app, state);
-
-//    [pool release];
 }
+
+#endif // PLATFORM != OSX

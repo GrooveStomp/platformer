@@ -25,7 +25,7 @@ namespace InputAction
 //
 struct InputState
 {
-    InputState():action(InputAction::None) {}
+    InputState(InputAction::Enum action=InputAction::None):action(action) {}
     InputAction::Enum action;
 };
 
