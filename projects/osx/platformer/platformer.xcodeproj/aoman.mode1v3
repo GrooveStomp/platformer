@@ -330,7 +330,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>21CA2401131DA5E8009F3F49</string>
+										<string>21CA2414131DAE7A009F3F49</string>
 										<key>history</key>
 										<array>
 											<string>21CA23F5131DA5E8009F3F49</string>
@@ -543,8 +543,8 @@
 	<key>WindowOrderList</key>
 	<array>
 		<string>1CD10A99069EF8BA00B06720</string>
-		<string>/Users/aoman/Projects/c++/platformer/projects/osx/platformer/platformer.xcodeproj</string>
 		<string>21CA2363131D9D91009F3F49</string>
+		<string>/Users/aoman/Projects/c++/platformer/projects/osx/platformer/platformer.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
 	<string>63 55 1377 823 0 0 1440 878 </string>
@@ -568,7 +568,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>soundmanager.cpp</string>
+								<string>input.cpp</string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>
@@ -639,7 +639,7 @@
 			<key>WindowToolGUID</key>
 			<string>21CA2363131D9D91009F3F49</string>
 			<key>WindowToolIsVisible</key>
-			<true/>
+			<false/>
 		</dict>
 		<dict>
 			<key>FirstTimeWindowDisplayed</key>

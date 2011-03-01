@@ -378,6 +378,65 @@
 		vrLen = 1070;
 		vrLoc = 0;
 	};
+	21CA2409131DA964009F3F49 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 21CA238C131D9DFF009F3F49 /* input.cpp */;
+		name = "input.cpp: 12";
+		rLen = 0;
+		rLoc = 204;
+		rType = 0;
+		vrLen = 541;
+		vrLoc = 0;
+	};
+	21CA240A131DA964009F3F49 /* XCBuildMessageTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "System/soundmanager.h: No such file or directory";
+		fRef = 21CA2391131D9DFF009F3F49 /* soundmanager.cpp */;
+		fallbackIsa = XCBuildMessageTextBookmark;
+		rLen = 1;
+		rLoc = 0;
+		rType = 1;
+	};
+	21CA240B131DA964009F3F49 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 21CA2391131D9DFF009F3F49 /* soundmanager.cpp */;
+		name = "soundmanager.cpp: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 471;
+		vrLoc = 0;
+	};
+	21CA240C131DA966009F3F49 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 21CA238C131D9DFF009F3F49 /* input.cpp */;
+		name = "input.cpp: 12";
+		rLen = 0;
+		rLoc = 204;
+		rType = 0;
+		vrLen = 1070;
+		vrLoc = 0;
+	};
+	21CA2411131DAE5D009F3F49 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 21CA238C131D9DFF009F3F49 /* input.cpp */;
+		name = "input.cpp: 12";
+		rLen = 0;
+		rLoc = 204;
+		rType = 0;
+		vrLen = 1070;
+		vrLoc = 0;
+	};
+	21CA2414131DAE7A009F3F49 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 21CA238C131D9DFF009F3F49 /* input.cpp */;
+		name = "input.cpp: 12";
+		rLen = 0;
+		rLoc = 204;
+		rType = 0;
+		vrLen = 1070;
+		vrLoc = 0;
+	};
 	29B97313FDCFA39411CA2CEA /* Project object */ = {
 		activeBuildConfigurationName = Debug;
 		activeExecutable = 21CA234E131D9D57009F3F49 /* platformer */;
@@ -438,6 +497,12 @@
 			21CA23FF131DA5E8009F3F49 /* PBXTextBookmark */ = 21CA23FF131DA5E8009F3F49 /* PBXTextBookmark */;
 			21CA2400131DA5E8009F3F49 /* XCBuildMessageTextBookmark */ = 21CA2400131DA5E8009F3F49 /* XCBuildMessageTextBookmark */;
 			21CA2401131DA5E8009F3F49 /* PBXTextBookmark */ = 21CA2401131DA5E8009F3F49 /* PBXTextBookmark */;
+			21CA2409131DA964009F3F49 /* PBXTextBookmark */ = 21CA2409131DA964009F3F49 /* PBXTextBookmark */;
+			21CA240A131DA964009F3F49 /* XCBuildMessageTextBookmark */ = 21CA240A131DA964009F3F49 /* XCBuildMessageTextBookmark */;
+			21CA240B131DA964009F3F49 /* PBXTextBookmark */ = 21CA240B131DA964009F3F49 /* PBXTextBookmark */;
+			21CA240C131DA966009F3F49 /* PBXTextBookmark */ = 21CA240C131DA966009F3F49 /* PBXTextBookmark */;
+			21CA2411131DAE5D009F3F49 /* PBXTextBookmark */ = 21CA2411131DAE5D009F3F49 /* PBXTextBookmark */;
+			21CA2414131DAE7A009F3F49 /* PBXTextBookmark */ = 21CA2414131DAE7A009F3F49 /* PBXTextBookmark */;
 		};
 		sourceControlManager = 21CA235F131D9D7F009F3F49 /* Source Control */;
 		userBuildSettings = {

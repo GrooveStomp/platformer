@@ -92,30 +92,51 @@ if __name__ == "__main__":
     # Ensure that our platform is set before updating our Makefile.
     if "" == platform:
         platform = GuessPlatform()
-    link_flags = GetPlatformLinkerFlags(platform)
 
-    # Replace our PLATFORM_LFLAGS with the appropriate value.
-    lines = open(makefile).readlines()
-    out = open(makefile, "w")
-    for line in lines:
-        if re.match("PLATFORM_LFLAGS=", line):
-            line = "PLATFORM_LFLAGS=" + link_flags + "\n"
-        out.write(line)
-    out.close()
 
-    if debug:
-        # Setup our DEBUG values.
+    #-------------------------------------------------------------------------
+    # End OSX Configuration.
+    #-------------------------------------------------------------------------
+    if "osx" == platform:
+        lines = open (makefile).readlines()
+        out = open(makefile, "w")
+        for line in lines:
+            if re.match("all:", line):
+                if debug:
+                    line = "all:\n\txcodebuild -project projects/osx/platformer/platformer.xcodeproj -alltargets -configuration Debug\n"
+                else:
+                    line = "all:\n\txcodebuild -project projects/osx/platformer/platformer.xcodeproj -alltargets -configuration Release\n"
+            out.write(line)
+    #-------------------------------------------------------------------------
+    # End OSX Configuration.
+    #-------------------------------------------------------------------------
+
+
+    else:
+        link_flags = GetPlatformLinkerFlags(platform)
+
+        # Replace our PLATFORM_LFLAGS with the appropriate value.
         lines = open(makefile).readlines()
         out = open(makefile, "w")
         for line in lines:
-            #   > DEBUG=-g -O0 -fno-inline
-            if re.match("DEBUG=", line):
-                line = "DEBUG=-g -O0 -fno-inline\n"
-            #   > DEBUG_DEFINES=-DFOB_LOGGING -DFOB_ASSERTS_ENABLED
-            elif re.match("DEBUG_DEFINES=", line):
-                line = "DEBUG_DEFINES=-DFOB_LOGGING -DFOB_ASSERTS_ENABLED\n"
-            #   > EXECUTABLE=platformerd
-            elif re.match("EXECUTABLE=", line):
-                line = "EXECUTABLE=platformerd"
+            if re.match("PLATFORM_LFLAGS=", line):
+                line = "PLATFORM_LFLAGS=" + link_flags + "\n"
             out.write(line)
         out.close()
+
+        if debug:
+            # Setup our DEBUG values.
+            lines = open(makefile).readlines()
+            out = open(makefile, "w")
+            for line in lines:
+                #   > DEBUG=-g -O0 -fno-inline
+                if re.match("DEBUG=", line):
+                    line = "DEBUG=-g -O0 -fno-inline\n"
+                #   > DEBUG_DEFINES=-DFOB_LOGGING -DFOB_ASSERTS_ENABLED
+                elif re.match("DEBUG_DEFINES=", line):
+                    line = "DEBUG_DEFINES=-DFOB_LOGGING -DFOB_ASSERTS_ENABLED\n"
+                #   > EXECUTABLE=platformerd
+                elif re.match("EXECUTABLE=", line):
+                    line = "EXECUTABLE=platformerd"
+                out.write(line)
+            out.close()

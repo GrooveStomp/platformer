@@ -2,3 +2,7 @@ A personal project.
 Tooling around with Data-Driven-Design.
 
 Not much to see so far.  Still cleaning out clutter and getting this building on OSX and Linux.
+
+TODO:
+    * For OSX builds, copy built executable to project root.
+    * Finish cleaning up all source files.
