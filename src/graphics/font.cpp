@@ -125,42 +125,44 @@ namespace FontUtils
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP);
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP);
         glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_MODULATE);
+
         glPushMatrix();
-        glLoadIdentity();
-        glTranslatef(f.position.x, f.position.y, 0);
+            glLoadIdentity();
+            glTranslatef(f.position.x, f.position.y, 0);
 
-        float char_width = 0.666666 * f.size;
-        float ch = f.scale;
-        float cw = (ch / f.size) * char_width;
+            float char_width = 0.666666 * f.size;
+            float ch = f.scale;
+            float cw = (ch / f.size) * char_width;
 
-        glBegin(GL_QUADS);
-        glColor4f(f.color.r, f.color.g, f.color.b, f.color.a);
+            glBegin(GL_QUADS);
 
-        if (FontAlign::Left == f.align)
-        {
-            for (unsigned int i=0; i < strlen(text); ++i)
-            {
-                DrawGlyph(text[i], i, cw, ch, t);
-            }
-        }
-        else if (FontAlign::Center == f.align)
-        {
-            int half = strlen(text) / 2;
-            for (unsigned int i=0; i < strlen(text); ++i)
-            {
-                DrawGlyph(text[i], -(half - i), cw, ch, t);
-            }
-        }
-        else if (FontAlign::Right == f.align)
-        {
-            int size = strlen(text) - 1;
-            for (unsigned int i=0; i < strlen(text); ++i)
-            {
-                DrawGlyph(text[i], -(size - i) - 1, cw, ch, t);
-            }
-        }
+                glColor4f(f.color.r, f.color.g, f.color.b, f.color.a);
 
-        glEnd();
+                if (FontAlign::Left == f.align)
+                {
+                    for (unsigned int i=0; i < strlen(text); ++i)
+                    {
+                        DrawGlyph(text[i], i, cw, ch, t);
+                    }
+                }
+                else if (FontAlign::Center == f.align)
+                {
+                    int half = strlen(text) / 2;
+                    for (unsigned int i=0; i < strlen(text); ++i)
+                    {
+                        DrawGlyph(text[i], -(half - i), cw, ch, t);
+                    }
+                }
+                else if (FontAlign::Right == f.align)
+                {
+                    int size = strlen(text) - 1;
+                    for (unsigned int i=0; i < strlen(text); ++i)
+                    {
+                        DrawGlyph(text[i], -(size - i) - 1, cw, ch, t);
+                    }
+                }
+
+            glEnd();
         glPopMatrix();
     }
 }
