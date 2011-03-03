@@ -17,19 +17,60 @@ import sys
 import re
 
 #-----------------------------------------------------------------------------
+# Return the platform-specific header include paths.
 #
-def GetPlatformLinkerFlags(platform):
+def GetHeaderPaths(platform):
+    paths = "-I./inc "
+
+    if "linux" == platform:
+        paths += " -I/usr/local/include"
+        paths += " -I/usr/local/include/SDL"
+        paths += " -I/usr/include/SDL"
+
+    elif "osx" == platform:
+        paths += " -I/Library/Frameworks/SDL.framework/Headers"
+        paths += " -I/Library/Frameworks/SDL_image.framework/Headers"
+
+    elif "windows" == platform:
+        pass
+
+    return paths
+
+#-----------------------------------------------------------------------------
+# Return the platform-specific linker flags.
+#
+def GetLinkerFlags(platform):
+
     if "linux" == platform:
         return "-lGL"
+
     elif "osx" == platform:
-        return "-framework OpenGL"
-    else:
-        return "-lGL"
+        return "-framework OpenGL " + \
+               "-framework SDL " + \
+               "-framework SDL_image " + \
+               "-framework Cocoa"
+
+    elif "windows" == platform:
+        return ""
+
+#-----------------------------------------------------------------------------
+# Define a constant which specifies the platform we're working on.
+#
+def GetPlatformFlags(platform):
+
+    if "linux" == platform:
+        return "-DPLATFORM_LINUX"
+
+    elif "osx" == platform:
+        return "-DPLATFORM_OSX"
+
+    elif "windows" == platform:
+        return "-DPLATFORM_WINDOWS"
 
 #-----------------------------------------------------------------------------
 # Return a string that hopefully represents what the platform is.
 #
-def GuessPlatform():
+def GetPlatform():
     os = subprocess.Popen(
         ["uname", "-s"],
         stdout = subprocess.PIPE
@@ -53,11 +94,15 @@ def Usage():
     print "\t[-d|--debug] configure for a debug build"
     print "\t[-p|--platform] specify which platform to build for.  One of osx, linux or windows."
 
+
 #-----------------------------------------------------------------------------
 # Main
 #-----------------------------------------------------------------------------
+
+
+#-----------------------------------------------------------------------------
+#
 if __name__ == "__main__":
-    platform = ""
     debug = False
     makefile = "makefile"
 
@@ -79,8 +124,6 @@ if __name__ == "__main__":
         if option in ("-h", "--help"):
             Usage()
             sys.exit()
-        elif option in ("-p", "--platform"):
-            platform = argument.lower()
         elif option in ("-d", "--debug"):
             debug = True;
         else:
@@ -89,57 +132,52 @@ if __name__ == "__main__":
     # Finish processing command-line options.
     #-------------------------------------------------------------------------
 
-    # Ensure that our platform is set before updating our Makefile.
-    if "" == platform:
-        platform = GuessPlatform()
+    # First, copy makefile.template to makefile.
+    subprocess.Popen(["cp", "makefile.template", makefile]);
 
+    # Find the platform we're on.
+    platform = GetPlatform()
 
-    #-------------------------------------------------------------------------
-    # End OSX Configuration.
-    #-------------------------------------------------------------------------
-    if "osx" == platform:
-        lines = open (makefile).readlines()
-        out = open(makefile, "w")
-        for line in lines:
-            if re.match("all:", line):
-                line = "all: osx-build osx-link\n"
-            elif re.match("OSX_BUILD=", line):
-                line = "OSX_BUILD=platformer.app\n"
-            out.write(line)
-    #-------------------------------------------------------------------------
-    # End OSX Configuration.
-    #-------------------------------------------------------------------------
+    # Set the include directories.
+    lines = open(makefile).readlines()
+    out = open(makefile, "w")
+    for line in lines:
+        if re.match("CINCLUDES=", line):
+            line = "CINCLUDES=" + GetHeaderPaths(platform) + "\n";
+        out.write(line)
+    out.close()
 
+    # Set the linker flags.
+    lines = open(makefile).readlines()
+    out = open(makefile, "w")
+    for line in lines:
+        if re.match("PLATFORM_LFLAGS=", line):
+            line = "PLATFORM_LFLAGS=" + GetLinkerFlags(platform) + "\n"
+        out.write(line)
+    out.close()
 
-    else:
-        link_flags = GetPlatformLinkerFlags(platform)
+    # Set the platform defines.
+    lines = open(makefile).readlines()
+    out = open(makefile, "w")
+    for line in lines:
+        if re.match("PLATFORM_DEFINES=", line):
+            line = "PLATFORM_DEFINES=" + GetPlatformFlags(platform) + "\n"
+        out.write(line)
+    out.close()
 
-        # Replace our PLATFORM_LFLAGS with the appropriate value.
+    if debug:
+        # Setup our DEBUG values.
         lines = open(makefile).readlines()
         out = open(makefile, "w")
         for line in lines:
-            if re.match("PLATFORM_LFLAGS=", line):
-                line = "PLATFORM_LFLAGS=" + link_flags + "\n"
-            elif re.match("PLATFORM_DEFINES=", line):
-                line = "PLATFORM_DEFINES=-DPLATFORM_" + platform.upper() + "\n";
+            #   > DEBUG=-g -O0 -fno-inline
+            if re.match("DEBUG=", line):
+                line = "DEBUG=-g -O0 -fno-inline\n"
+            #   > DEBUG_DEFINES=-DFOB_LOGGING -DFOB_ASSERTS_ENABLED
+            elif re.match("DEBUG_DEFINES=", line):
+                line = "DEBUG_DEFINES=-DFOB_LOGGING -DFOB_ASSERTS_ENABLED\n"
+            #   > EXECUTABLE=platformerd
+            elif re.match("EXECUTABLE=", line):
+                line = "EXECUTABLE=platformerd"
             out.write(line)
         out.close()
-
-        if debug:
-            # Setup our DEBUG values.
-            lines = open(makefile).readlines()
-            out = open(makefile, "w")
-            for line in lines:
-                #   > DEBUG=-g -O0 -fno-inline
-                if re.match("DEBUG=", line):
-                    line = "DEBUG=-g -O0 -fno-inline\n"
-                #   > DEBUG_DEFINES=-DFOB_LOGGING -DFOB_ASSERTS_ENABLED
-                elif re.match("DEBUG_DEFINES=", line):
-                    line = "DEBUG_DEFINES=-DFOB_LOGGING -DFOB_ASSERTS_ENABLED\n"
-                #   > EXECUTABLE=platformerd
-                elif re.match("EXECUTABLE=", line):
-                    line = "EXECUTABLE=platformerd"
-                elif "osx" == platform and re.match("OSX_CONFIG="):
-                    line = "OSX_CONFIG=Debug\n"
-                out.write(line)
-            out.close()

@@ -21,23 +21,15 @@ CC=g++
 DEBUG=
 DEBUG_DEFINES=
 CFLAGS=-Wall -c $(DEBUG)
-CINCLUDES=-I/usr/local/include -I/usr/local/include/SDL -I/usr/include/SDL -I./inc
-PLATFORM_LFLAGS=-framework OpenGL
+CINCLUDES=
+PLATFORM_LFLAGS=
 PLATFORM_DEFINES=
 LFLAGS=-lSDLmain -lSDL -lSDL_image -lSDL_mixer -lGLEW $(PLATFORM_LFLAGS)
 LINCLUDES=-L/usr/local/lib -L/usr/lib
 DEFINES=-D_GNU_SOURCE=1 -D_THREAD_SAFE $(DEBUG_DEFINES) $(PLATFORM_DEFINES)
 EXECUTABLE=platformer
-OSX_CONFIG=Release
-OSX_BUILD=
 
 all: $(SOURCES) $(EXECUTABLE)
-
-osx-build:
-	xcodebuild -project projects/osx/platformer/platformer.xcodeproj -alltargets -configuration $(OSX_CONFIG)
-
-osx-link:
-	ln -s projects/osx/platformer/build/$(OSX_CONFIG)/platformer.app platformer.app
 
 $(EXECUTABLE): $(OBJECTS)
 	$(CC) $(LFLAGS) $(LINCLUDES) $(OBJECTS) -o $@
@@ -46,4 +38,4 @@ $(EXECUTABLE): $(OBJECTS)
 	$(CC) $(CFLAGS) $(CINCLUDES) $(DEFINES) $< -o $@
 
 clean:
-	rm -rf $(OBJECTS) platformerd platformer $(OSX_BUILD)
+	rm -rf $(OBJECTS) platformerd platformer
