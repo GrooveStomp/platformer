@@ -1,3 +1,4 @@
 projects/osx/platformer/build
-.DS_Store
+*.DS_Store
 projects/osx/platformer/atlantis
+*.o

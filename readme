@@ -6,3 +6,4 @@ Not much to see so far.  Still cleaning out clutter and getting this building on
 TODO:
     * For OSX builds, copy built executable to project root.
     * Finish cleaning up all source files.
+    * Fix OSX platform define to be PLATFORM_OSX

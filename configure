@@ -122,7 +122,7 @@ if __name__ == "__main__":
             if re.match("PLATFORM_LFLAGS=", line):
                 line = "PLATFORM_LFLAGS=" + link_flags + "\n"
             elif re.match("PLATFORM_DEFINES=", line):
-                line = "PLATFORM_DEFINES=-DPLATFORM=" + platform.upper() + "\n";
+                line = "PLATFORM_DEFINES=-DPLATFORM_" + platform.upper() + "\n";
             out.write(line)
         out.close()
 
