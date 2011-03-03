@@ -10,7 +10,6 @@
 		002F39FA09D0881F00EBEB88 /* SDL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 002F39F909D0881F00EBEB88 /* SDL.framework */; };
 		002F3A0009D0884600EBEB88 /* SDL.framework in Copy Frameworks into .app bundle */ = {isa = PBXBuildFile; fileRef = 002F39F909D0881F00EBEB88 /* SDL.framework */; };
 		002F3A2E09D0888800EBEB88 /* SDLMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 002F3A2C09D0888800EBEB88 /* SDLMain.m */; };
-		002F3A3F09D088BA00EBEB88 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 002F3A3E09D088BA00EBEB88 /* main.c */; };
 		002F3BFA09D0938900EBEB88 /* atlantis.c in Sources */ = {isa = PBXBuildFile; fileRef = 002F3BF409D0938900EBEB88 /* atlantis.c */; };
 		002F3BFC09D0938900EBEB88 /* dolphin.c in Sources */ = {isa = PBXBuildFile; fileRef = 002F3BF609D0938900EBEB88 /* dolphin.c */; };
 		002F3BFD09D0938900EBEB88 /* shark.c in Sources */ = {isa = PBXBuildFile; fileRef = 002F3BF709D0938900EBEB88 /* shark.c */; };
@@ -20,6 +19,7 @@
 		002F3C6109D0951E00EBEB88 /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 002F3C6009D0951E00EBEB88 /* GLUT.framework */; };
 		2107B52C131F1C5200D0D758 /* gamestate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2107B52B131F1C5200D0D758 /* gamestate.cpp */; };
 		2123C940131F1F9E00975F16 /* SDL_image.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2123C93F131F1F9E00975F16 /* SDL_image.framework */; };
+		2123C95B131F214000975F16 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2123C95A131F214000975F16 /* main.cpp */; };
 		21CA239B131D9DFF009F3F49 /* font.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 21CA2389131D9DFF009F3F49 /* font.cpp */; };
 		21CA239C131D9DFF009F3F49 /* texture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 21CA238A131D9DFF009F3F49 /* texture.cpp */; };
 		21CA239D131D9DFF009F3F49 /* input.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 21CA238C131D9DFF009F3F49 /* input.cpp */; };
@@ -55,7 +55,6 @@
 		002F39F909D0881F00EBEB88 /* SDL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL.framework; path = /Library/Frameworks/SDL.framework; sourceTree = "<absolute>"; };
 		002F3A2B09D0888800EBEB88 /* SDLMain.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = SDLMain.h; sourceTree = SOURCE_ROOT; };
 		002F3A2C09D0888800EBEB88 /* SDLMain.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = SDLMain.m; sourceTree = SOURCE_ROOT; };
-		002F3A3E09D088BA00EBEB88 /* main.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		002F3BF409D0938900EBEB88 /* atlantis.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; name = atlantis.c; path = atlantis/atlantis.c; sourceTree = SOURCE_ROOT; };
 		002F3BF509D0938900EBEB88 /* atlantis.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = atlantis.h; path = atlantis/atlantis.h; sourceTree = SOURCE_ROOT; };
 		002F3BF609D0938900EBEB88 /* dolphin.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; name = dolphin.c; path = atlantis/dolphin.c; sourceTree = SOURCE_ROOT; };
@@ -68,7 +67,8 @@
 		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		2107B52A131F1B3B00D0D758 /* player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = player.h; sourceTree = "<group>"; };
 		2107B52B131F1C5200D0D758 /* gamestate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = gamestate.cpp; sourceTree = "<group>"; };
-		2123C93F131F1F9E00975F16 /* SDL_image.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL_image.framework; path = Library/Frameworks/SDL_image.framework; sourceTree = SDKROOT; };
+		2123C93F131F1F9E00975F16 /* SDL_image.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL_image.framework; path = macosx10.4/Library/Frameworks/SDL_image.framework; sourceTree = "<group>"; };
+		2123C95A131F214000975F16 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		21CA236E131D9DEA009F3F49 /* font.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = font.h; sourceTree = "<group>"; };
 		21CA236F131D9DEA009F3F49 /* texture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = texture.h; sourceTree = "<group>"; };
 		21CA2371131D9DEA009F3F49 /* input.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = input.h; sourceTree = "<group>"; };
@@ -131,7 +131,6 @@
 			children = (
 				002F3BF309D0937800EBEB88 /* atlantis */,
 				32CA4F630368D1EE00C91783 /* platformer_Prefix.pch */,
-				002F3A3E09D088BA00EBEB88 /* main.c */,
 				002F3A2B09D0888800EBEB88 /* SDLMain.h */,
 				002F3A2C09D0888800EBEB88 /* SDLMain.m */,
 			);
@@ -141,6 +140,7 @@
 		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2123C93F131F1F9E00975F16 /* SDL_image.framework */,
 				002F39F909D0881F00EBEB88 /* SDL.framework */,
 				002F3C6009D0951E00EBEB88 /* GLUT.framework */,
 				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
@@ -250,6 +250,7 @@
 		21CA2387131D9DFF009F3F49 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				2123C95A131F214000975F16 /* main.cpp */,
 				21CA2388131D9DFF009F3F49 /* graphics */,
 				21CA238B131D9DFF009F3F49 /* input */,
 				21CA238E131D9DFF009F3F49 /* math */,
@@ -350,7 +351,6 @@
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
-				2123C93F131F1F9E00975F16 /* SDL_image.framework */,
 			);
 			name = platformer;
 			sourceTree = "<group>";
@@ -442,7 +442,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				002F3A2E09D0888800EBEB88 /* SDLMain.m in Sources */,
-				002F3A3F09D088BA00EBEB88 /* main.c in Sources */,
 				002F3BFA09D0938900EBEB88 /* atlantis.c in Sources */,
 				002F3BFC09D0938900EBEB88 /* dolphin.c in Sources */,
 				002F3BFD09D0938900EBEB88 /* shark.c in Sources */,
@@ -457,6 +456,7 @@
 				21CA23A4131D9DFF009F3F49 /* unique.cpp in Sources */,
 				21CA23A6131D9DFF009F3F49 /* player.cpp in Sources */,
 				2107B52C131F1C5200D0D758 /* gamestate.cpp in Sources */,
+				2123C95B131F214000975F16 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -478,14 +478,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COPY_PHASE_STRIP = NO;
-				FOB_ASSERTS_ENABLED = 1;
-				FOB_LOGGING = 1;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = platformer_Prefix.pch;
+				GCC_PREPROCESSOR_DEFINITIONS = PLATFORM_OSX;
 				HEADER_SEARCH_PATHS = (
 					"$(HOME)/Library/Frameworks/SDL.framework/Headers",
 					/Library/Frameworks/SDL.framework/Headers,
@@ -513,6 +512,7 @@
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = platformer_Prefix.pch;
+				GCC_PREPROCESSOR_DEFINITIONS = PLATFORM_OSX;
 				HEADER_SEARCH_PATHS = (
 					"$(HOME)/Library/Frameworks/SDL.framework/Headers",
 					/Library/Frameworks/SDL.framework/Headers,
@@ -533,11 +533,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(HOME)/Library/Frameworks",
 					/Library/Frameworks,
 					"$(FRAMEWORK_SEARCH_PATHS)",
 				);
+				GCC_PREPROCESSOR_DEFINITIONS = "FOB_LOGGING,FOB_ASSERTS_ENABLED";
 				GCC_VERSION = 4.0;
 				"GCC_VERSION[arch=x86_64]" = 4.2;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -550,7 +552,6 @@
 					"$(HOME)/Projects/c++/platformer/inc",
 					/usr/local/include/SDL,
 				);
-				PLATFORM_OSX = 1;
 				PREBINDING = NO;
 				SDKROOT = macosx10.4;
 				"SDKROOT[arch=x86_64]" = "$(DEVELOPER_SDK_DIR)/MacOSX10.6.sdk";
@@ -561,6 +562,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(HOME)/Library/Frameworks",
 					/Library/Frameworks,
@@ -578,7 +580,6 @@
 					"$(HOME)/Projects/c++/platformer/inc",
 					/usr/local/include/SDL,
 				);
-				PLATFORM_OSX = 1;
 				PREBINDING = NO;
 				SDKROOT = macosx10.4;
 				"SDKROOT[arch=x86_64]" = "$(DEVELOPER_SDK_DIR)/MacOSX10.6.sdk";

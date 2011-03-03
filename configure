@@ -102,10 +102,9 @@ if __name__ == "__main__":
         out = open(makefile, "w")
         for line in lines:
             if re.match("all:", line):
-                if debug:
-                    line = "all:\n\txcodebuild -project projects/osx/platformer/platformer.xcodeproj -alltargets -configuration Debug\n"
-                else:
-                    line = "all:\n\txcodebuild -project projects/osx/platformer/platformer.xcodeproj -alltargets -configuration Release\n"
+                line = "all: osx-build osx-link\n"
+            elif re.match("OSX_BUILD=", line):
+                line = "OSX_BUILD=platformer.app\n"
             out.write(line)
     #-------------------------------------------------------------------------
     # End OSX Configuration.
@@ -140,5 +139,7 @@ if __name__ == "__main__":
                 #   > EXECUTABLE=platformerd
                 elif re.match("EXECUTABLE=", line):
                     line = "EXECUTABLE=platformerd"
+                elif "osx" == platform and re.match("OSX_CONFIG="):
+                    line = "OSX_CONFIG=Debug\n"
                 out.write(line)
             out.close()

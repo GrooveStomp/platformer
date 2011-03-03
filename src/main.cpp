@@ -1,5 +1,3 @@
-#if !defined(PLATFORM_OSX)
-
 #include "graphics/font.h"
 #include "graphics/texture.h"
 #include "math/vec2.h"
@@ -12,7 +10,6 @@
 
 int main(int argc, char *argv[])
 {
-
 #if PLATFORM_OSX
     printf("OSX!\n");
 #elif PLATFORM_LINUX
@@ -20,7 +17,6 @@ int main(int argc, char *argv[])
 #else
     printf("OTHER!\n");
 #endif
-
 
     printf("Creating ApplicationState\n");
     fob::system::ApplicationState app(320, 240);
@@ -33,5 +29,3 @@ int main(int argc, char *argv[])
 
     return 0;
 }
-
-#endif // !defined(PLATFORM_OSX)
