@@ -23,12 +23,9 @@
 		21CA239D131D9DFF009F3F49 /* input.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 21CA238C131D9DFF009F3F49 /* input.cpp */; };
 		21CA239E131D9DFF009F3F49 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 21CA238D131D9DFF009F3F49 /* main.cpp */; };
 		21CA239F131D9DFF009F3F49 /* vec2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 21CA238F131D9DFF009F3F49 /* vec2.cpp */; };
-		21CA23A0131D9DFF009F3F49 /* soundmanager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 21CA2391131D9DFF009F3F49 /* soundmanager.cpp */; };
 		21CA23A1131D9DFF009F3F49 /* application.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 21CA2393131D9DFF009F3F49 /* application.cpp */; };
-		21CA23A2131D9DFF009F3F49 /* messagequeue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 21CA2394131D9DFF009F3F49 /* messagequeue.cpp */; };
 		21CA23A3131D9DFF009F3F49 /* timer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 21CA2395131D9DFF009F3F49 /* timer.cpp */; };
 		21CA23A4131D9DFF009F3F49 /* unique.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 21CA2396131D9DFF009F3F49 /* unique.cpp */; };
-		21CA23A5131D9DFF009F3F49 /* ingameobjectmanager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 21CA2399131D9DFF009F3F49 /* ingameobjectmanager.cpp */; };
 		21CA23A6131D9DFF009F3F49 /* player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 21CA239A131D9DFF009F3F49 /* player.cpp */; };
 		21CA23B0131D9E3A009F3F49 /* end_game.cfg in Resources */ = {isa = PBXBuildFile; fileRef = 21CA23AB131D9E3A009F3F49 /* end_game.cfg */; };
 		21CA23B1131D9E3A009F3F49 /* front_end.cfg in Resources */ = {isa = PBXBuildFile; fileRef = 21CA23AC131D9E3A009F3F49 /* front_end.cfg */; };
@@ -68,36 +65,23 @@
 		002F3C6009D0951E00EBEB88 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = ../../../../../../../../../../System/Library/Frameworks/GLUT.framework; sourceTree = SOURCE_ROOT; };
 		089C165DFE840E0CC02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
-		21CA236D131D9DEA009F3F49 /* color.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = color.h; sourceTree = "<group>"; };
+		2107B52A131F1B3B00D0D758 /* player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = player.h; sourceTree = "<group>"; };
 		21CA236E131D9DEA009F3F49 /* font.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = font.h; sourceTree = "<group>"; };
 		21CA236F131D9DEA009F3F49 /* texture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = texture.h; sourceTree = "<group>"; };
 		21CA2371131D9DEA009F3F49 /* input.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = input.h; sourceTree = "<group>"; };
-		21CA2373131D9DEA009F3F49 /* endgame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = endgame.h; sourceTree = "<group>"; };
-		21CA2374131D9DEA009F3F49 /* frontend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = frontend.h; sourceTree = "<group>"; };
-		21CA2375131D9DEA009F3F49 /* hud.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hud.h; sourceTree = "<group>"; };
-		21CA2376131D9DEA009F3F49 /* ingame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ingame.h; sourceTree = "<group>"; };
-		21CA2377131D9DEA009F3F49 /* interface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = interface.h; sourceTree = "<group>"; };
 		21CA2379131D9DEA009F3F49 /* vec2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vec2.h; sourceTree = "<group>"; };
-		21CA237B131D9DEA009F3F49 /* soundmanager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = soundmanager.h; sourceTree = "<group>"; };
 		21CA237D131D9DEA009F3F49 /* application.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = application.h; sourceTree = "<group>"; };
-		21CA237E131D9DEA009F3F49 /* messagequeue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = messagequeue.h; sourceTree = "<group>"; };
 		21CA237F131D9DEA009F3F49 /* timer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = timer.h; sourceTree = "<group>"; };
 		21CA2380131D9DEA009F3F49 /* unique.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = unique.h; sourceTree = "<group>"; };
 		21CA2383131D9DEA009F3F49 /* gamestate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gamestate.h; sourceTree = "<group>"; };
-		21CA2384131D9DEA009F3F49 /* ingameobjectmanager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ingameobjectmanager.h; sourceTree = "<group>"; };
-		21CA2385131D9DEA009F3F49 /* objectmanager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = objectmanager.h; sourceTree = "<group>"; };
-		21CA2386131D9DEA009F3F49 /* player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = player.h; sourceTree = "<group>"; };
 		21CA2389131D9DFF009F3F49 /* font.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = font.cpp; sourceTree = "<group>"; };
 		21CA238A131D9DFF009F3F49 /* texture.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = texture.cpp; sourceTree = "<group>"; };
 		21CA238C131D9DFF009F3F49 /* input.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = input.cpp; sourceTree = "<group>"; };
 		21CA238D131D9DFF009F3F49 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		21CA238F131D9DFF009F3F49 /* vec2.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = vec2.cpp; sourceTree = "<group>"; };
-		21CA2391131D9DFF009F3F49 /* soundmanager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = soundmanager.cpp; sourceTree = "<group>"; };
 		21CA2393131D9DFF009F3F49 /* application.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = application.cpp; sourceTree = "<group>"; };
-		21CA2394131D9DFF009F3F49 /* messagequeue.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = messagequeue.cpp; sourceTree = "<group>"; };
 		21CA2395131D9DFF009F3F49 /* timer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = timer.cpp; sourceTree = "<group>"; };
 		21CA2396131D9DFF009F3F49 /* unique.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = unique.cpp; sourceTree = "<group>"; };
-		21CA2399131D9DFF009F3F49 /* ingameobjectmanager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ingameobjectmanager.cpp; sourceTree = "<group>"; };
 		21CA239A131D9DFF009F3F49 /* player.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = player.cpp; sourceTree = "<group>"; };
 		21CA23AB131D9E3A009F3F49 /* end_game.cfg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = end_game.cfg; sourceTree = "<group>"; };
 		21CA23AC131D9E3A009F3F49 /* front_end.cfg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = front_end.cfg; sourceTree = "<group>"; };
@@ -198,7 +182,6 @@
 		21CA236C131D9DEA009F3F49 /* graphics */ = {
 			isa = PBXGroup;
 			children = (
-				21CA236D131D9DEA009F3F49 /* color.h */,
 				21CA236E131D9DEA009F3F49 /* font.h */,
 				21CA236F131D9DEA009F3F49 /* texture.h */,
 			);
@@ -216,11 +199,6 @@
 		21CA2372131D9DEA009F3F49 /* interface */ = {
 			isa = PBXGroup;
 			children = (
-				21CA2373131D9DEA009F3F49 /* endgame.h */,
-				21CA2374131D9DEA009F3F49 /* frontend.h */,
-				21CA2375131D9DEA009F3F49 /* hud.h */,
-				21CA2376131D9DEA009F3F49 /* ingame.h */,
-				21CA2377131D9DEA009F3F49 /* interface.h */,
 			);
 			path = interface;
 			sourceTree = "<group>";
@@ -236,7 +214,6 @@
 		21CA237A131D9DEA009F3F49 /* sound */ = {
 			isa = PBXGroup;
 			children = (
-				21CA237B131D9DEA009F3F49 /* soundmanager.h */,
 			);
 			path = sound;
 			sourceTree = "<group>";
@@ -245,7 +222,6 @@
 			isa = PBXGroup;
 			children = (
 				21CA237D131D9DEA009F3F49 /* application.h */,
-				21CA237E131D9DEA009F3F49 /* messagequeue.h */,
 				21CA237F131D9DEA009F3F49 /* timer.h */,
 				21CA2380131D9DEA009F3F49 /* unique.h */,
 			);
@@ -262,10 +238,8 @@
 		21CA2382131D9DEA009F3F49 /* world */ = {
 			isa = PBXGroup;
 			children = (
+				2107B52A131F1B3B00D0D758 /* player.h */,
 				21CA2383131D9DEA009F3F49 /* gamestate.h */,
-				21CA2384131D9DEA009F3F49 /* ingameobjectmanager.h */,
-				21CA2385131D9DEA009F3F49 /* objectmanager.h */,
-				21CA2386131D9DEA009F3F49 /* player.h */,
 			);
 			path = world;
 			sourceTree = "<group>";
@@ -314,7 +288,6 @@
 		21CA2390131D9DFF009F3F49 /* sound */ = {
 			isa = PBXGroup;
 			children = (
-				21CA2391131D9DFF009F3F49 /* soundmanager.cpp */,
 			);
 			path = sound;
 			sourceTree = "<group>";
@@ -323,7 +296,6 @@
 			isa = PBXGroup;
 			children = (
 				21CA2393131D9DFF009F3F49 /* application.cpp */,
-				21CA2394131D9DFF009F3F49 /* messagequeue.cpp */,
 				21CA2395131D9DFF009F3F49 /* timer.cpp */,
 				21CA2396131D9DFF009F3F49 /* unique.cpp */,
 			);
@@ -340,7 +312,6 @@
 		21CA2398131D9DFF009F3F49 /* world */ = {
 			isa = PBXGroup;
 			children = (
-				21CA2399131D9DFF009F3F49 /* ingameobjectmanager.cpp */,
 				21CA239A131D9DFF009F3F49 /* player.cpp */,
 			);
 			path = world;
@@ -478,12 +449,9 @@
 				21CA239D131D9DFF009F3F49 /* input.cpp in Sources */,
 				21CA239E131D9DFF009F3F49 /* main.cpp in Sources */,
 				21CA239F131D9DFF009F3F49 /* vec2.cpp in Sources */,
-				21CA23A0131D9DFF009F3F49 /* soundmanager.cpp in Sources */,
 				21CA23A1131D9DFF009F3F49 /* application.cpp in Sources */,
-				21CA23A2131D9DFF009F3F49 /* messagequeue.cpp in Sources */,
 				21CA23A3131D9DFF009F3F49 /* timer.cpp in Sources */,
 				21CA23A4131D9DFF009F3F49 /* unique.cpp in Sources */,
-				21CA23A5131D9DFF009F3F49 /* ingameobjectmanager.cpp in Sources */,
 				21CA23A6131D9DFF009F3F49 /* player.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -561,7 +529,7 @@
 					"$(HOME)/Projects/c++/platformer/inc",
 					/usr/local/include/SDL,
 				);
-				PLATFORM = OSX;
+				PLATFORM_OSX = 1;
 				PREBINDING = NO;
 				SDKROOT = macosx10.4;
 				"SDKROOT[arch=x86_64]" = "$(DEVELOPER_SDK_DIR)/MacOSX10.6.sdk";
@@ -588,7 +556,7 @@
 					"$(HOME)/Projects/c++/platformer/inc",
 					/usr/local/include/SDL,
 				);
-				PLATFORM = OSX;
+				PLATFORM_OSX = 1;
 				PREBINDING = NO;
 				SDKROOT = macosx10.4;
 				"SDKROOT[arch=x86_64]" = "$(DEVELOPER_SDK_DIR)/MacOSX10.6.sdk";
