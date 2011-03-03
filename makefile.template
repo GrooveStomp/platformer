@@ -9,11 +9,13 @@
 SOURCES=src/main.cpp \
         src/math/vec2.cpp \
         src/world/player.cpp \
+		src/world/gamestate.cpp \
         src/graphics/font.cpp \
         src/graphics/texture.cpp \
         src/system/timer.cpp \
         src/system/unique.cpp \
-		src/system/application.cpp
+		src/system/application.cpp \
+		src/input/input.cpp
 OBJECTS=$(SOURCES:.cpp=.o)
 CC=g++
 DEBUG=

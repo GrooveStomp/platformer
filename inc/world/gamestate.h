@@ -13,9 +13,17 @@ namespace fob {
 struct GameState
 {
     GameState() {};
-    fob::input::InputState actions;
+    fob::input::InputState input;
     fob::world::PlayerState player;
 };
+
+//-----------------------------------------------------------------------------
+//
+namespace GameStateUtils
+{
+    void Update(GameState &state);
+    bool ShouldExit(const GameState &state);
+}
 
     } // namespace world
 } // namespace fob

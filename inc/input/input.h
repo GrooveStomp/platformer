@@ -33,7 +33,7 @@ struct InputState
 //
 namespace InputUtils
 {
-    InputState Update(const fob::world::GameState &state);
+    void Update(InputState &input, const fob::world::GameState &state);
 }
 
     } // namespace input

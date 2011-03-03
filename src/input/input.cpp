@@ -2,6 +2,8 @@
 
 #include "world/gamestate.h"
 
+#include <SDL.h>
+
 namespace fob {
     namespace input {
 
@@ -9,10 +11,8 @@ namespace InputUtils
 {
     //------------------------------------------------------------------------
     //
-    InputState Update(const GameState &state)
+    void Update(InputState &input, const fob::world::GameState &state)
     {
-        InputState input;
-
         SDL_Event keyevent;
         while (SDL_PollEvent(&keyevent)) {
             if (keyevent.type == SDL_KEYDOWN) {
@@ -28,10 +28,10 @@ namespace InputUtils
                 else if (keyevent.key.keysym.sym == SDLK_SPACE) {
                     input = InputState(InputAction::Jump);
                 }
+            } else {
+                input = InputState(InputAction::None);
             }
         }
-
-        return input;
     }
 }
 

@@ -33,10 +33,20 @@ namespace ApplicationUtils
         }
 
         SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1);
-        SDL_Surface* screen = SDL_SetVideoMode(app.width, app.height, 16, SDL_OPENGL);
+        SDL_Surface* screen = SDL_SetVideoMode(
+            app.width,
+            app.height,
+            16,
+            SDL_OPENGL
+        );
         if (!screen)
         {
-            printf("Couldn't set %dx%d video mode: %s\n", app.width, app.height, SDL_GetError());
+            printf(
+                "Couldn't set %dx%d video mode: %s\n",
+                app.width,
+                app.height,
+                SDL_GetError()
+            );
             return false;
         }
 
@@ -64,8 +74,12 @@ namespace ApplicationUtils
         {
             if (app.timer.Expired())
             {
-                // Get Input Here.
-                // Do Processing Here.
+                fob::world::GameStateUtils::Update(state);
+
+                if (fob::world::GameStateUtils::ShouldExit(state)) {
+                    app.running = false;
+                }
+
                 app.timer.Reset();
             }
         }
