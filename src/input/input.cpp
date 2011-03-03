@@ -11,8 +11,10 @@ namespace InputUtils
 {
     //------------------------------------------------------------------------
     //
-    void Update(InputState &input, const fob::world::GameState &state)
+    InputState Update(const fob::world::GameState &state)
     {
+        InputState input;
+
         SDL_Event keyevent;
         while (SDL_PollEvent(&keyevent)) {
             if (keyevent.type == SDL_KEYDOWN) {
@@ -32,6 +34,8 @@ namespace InputUtils
                 input = InputState(InputAction::None);
             }
         }
+
+        return input;
     }
 }
 

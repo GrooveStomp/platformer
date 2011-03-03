@@ -7,7 +7,8 @@ namespace GameStateUtils
 {
     void Update(GameState &state)
     {
-        fob::input::InputUtils::Update(state.input, state);
+        fob::input::InputState input = fob::input::InputUtils::Update(state);
+        state.input = input;
     }
 
     bool ShouldExit(const GameState &state)
