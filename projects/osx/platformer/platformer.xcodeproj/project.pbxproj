@@ -18,10 +18,11 @@
 		002F3BFF09D0938900EBEB88 /* whale.c in Sources */ = {isa = PBXBuildFile; fileRef = 002F3BF909D0938900EBEB88 /* whale.c */; };
 		002F3C0109D093BD00EBEB88 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 002F3C0009D093BD00EBEB88 /* OpenGL.framework */; };
 		002F3C6109D0951E00EBEB88 /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 002F3C6009D0951E00EBEB88 /* GLUT.framework */; };
+		2107B52C131F1C5200D0D758 /* gamestate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2107B52B131F1C5200D0D758 /* gamestate.cpp */; };
+		2123C940131F1F9E00975F16 /* SDL_image.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2123C93F131F1F9E00975F16 /* SDL_image.framework */; };
 		21CA239B131D9DFF009F3F49 /* font.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 21CA2389131D9DFF009F3F49 /* font.cpp */; };
 		21CA239C131D9DFF009F3F49 /* texture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 21CA238A131D9DFF009F3F49 /* texture.cpp */; };
 		21CA239D131D9DFF009F3F49 /* input.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 21CA238C131D9DFF009F3F49 /* input.cpp */; };
-		21CA239E131D9DFF009F3F49 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 21CA238D131D9DFF009F3F49 /* main.cpp */; };
 		21CA239F131D9DFF009F3F49 /* vec2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 21CA238F131D9DFF009F3F49 /* vec2.cpp */; };
 		21CA23A1131D9DFF009F3F49 /* application.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 21CA2393131D9DFF009F3F49 /* application.cpp */; };
 		21CA23A3131D9DFF009F3F49 /* timer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 21CA2395131D9DFF009F3F49 /* timer.cpp */; };
@@ -66,6 +67,8 @@
 		089C165DFE840E0CC02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		2107B52A131F1B3B00D0D758 /* player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = player.h; sourceTree = "<group>"; };
+		2107B52B131F1C5200D0D758 /* gamestate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = gamestate.cpp; sourceTree = "<group>"; };
+		2123C93F131F1F9E00975F16 /* SDL_image.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL_image.framework; path = Library/Frameworks/SDL_image.framework; sourceTree = SDKROOT; };
 		21CA236E131D9DEA009F3F49 /* font.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = font.h; sourceTree = "<group>"; };
 		21CA236F131D9DEA009F3F49 /* texture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = texture.h; sourceTree = "<group>"; };
 		21CA2371131D9DEA009F3F49 /* input.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = input.h; sourceTree = "<group>"; };
@@ -77,7 +80,6 @@
 		21CA2389131D9DFF009F3F49 /* font.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = font.cpp; sourceTree = "<group>"; };
 		21CA238A131D9DFF009F3F49 /* texture.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = texture.cpp; sourceTree = "<group>"; };
 		21CA238C131D9DFF009F3F49 /* input.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = input.cpp; sourceTree = "<group>"; };
-		21CA238D131D9DFF009F3F49 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		21CA238F131D9DFF009F3F49 /* vec2.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = vec2.cpp; sourceTree = "<group>"; };
 		21CA2393131D9DFF009F3F49 /* application.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = application.cpp; sourceTree = "<group>"; };
 		21CA2395131D9DFF009F3F49 /* timer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = timer.cpp; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 				002F3C6109D0951E00EBEB88 /* GLUT.framework in Frameworks */,
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
 				002F3C0109D093BD00EBEB88 /* OpenGL.framework in Frameworks */,
+				2123C940131F1F9E00975F16 /* SDL_image.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,7 +252,6 @@
 			children = (
 				21CA2388131D9DFF009F3F49 /* graphics */,
 				21CA238B131D9DFF009F3F49 /* input */,
-				21CA238D131D9DFF009F3F49 /* main.cpp */,
 				21CA238E131D9DFF009F3F49 /* math */,
 				21CA2390131D9DFF009F3F49 /* sound */,
 				21CA2392131D9DFF009F3F49 /* system */,
@@ -312,6 +314,7 @@
 		21CA2398131D9DFF009F3F49 /* world */ = {
 			isa = PBXGroup;
 			children = (
+				2107B52B131F1C5200D0D758 /* gamestate.cpp */,
 				21CA239A131D9DFF009F3F49 /* player.cpp */,
 			);
 			path = world;
@@ -347,6 +350,7 @@
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
+				2123C93F131F1F9E00975F16 /* SDL_image.framework */,
 			);
 			name = platformer;
 			sourceTree = "<group>";
@@ -447,12 +451,12 @@
 				21CA239B131D9DFF009F3F49 /* font.cpp in Sources */,
 				21CA239C131D9DFF009F3F49 /* texture.cpp in Sources */,
 				21CA239D131D9DFF009F3F49 /* input.cpp in Sources */,
-				21CA239E131D9DFF009F3F49 /* main.cpp in Sources */,
 				21CA239F131D9DFF009F3F49 /* vec2.cpp in Sources */,
 				21CA23A1131D9DFF009F3F49 /* application.cpp in Sources */,
 				21CA23A3131D9DFF009F3F49 /* timer.cpp in Sources */,
 				21CA23A4131D9DFF009F3F49 /* unique.cpp in Sources */,
 				21CA23A6131D9DFF009F3F49 /* player.cpp in Sources */,
+				2107B52C131F1C5200D0D758 /* gamestate.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -482,6 +486,14 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = platformer_Prefix.pch;
+				HEADER_SEARCH_PATHS = (
+					"$(HOME)/Library/Frameworks/SDL.framework/Headers",
+					/Library/Frameworks/SDL.framework/Headers,
+					/Library/Frameworks/SDL_Image/framework/Headers,
+					"$(HEADER_SEARCH_PATHS)",
+					"$(HOME)/Projects/c++/platformer/inc",
+					/usr/local/include/SDL,
+				);
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
 				PRODUCT_NAME = platformer;
@@ -501,6 +513,14 @@
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = platformer_Prefix.pch;
+				HEADER_SEARCH_PATHS = (
+					"$(HOME)/Library/Frameworks/SDL.framework/Headers",
+					/Library/Frameworks/SDL.framework/Headers,
+					/Library/Frameworks/SDL_Image/framework/Headers,
+					"$(HEADER_SEARCH_PATHS)",
+					"$(HOME)/Projects/c++/platformer/inc",
+					/usr/local/include/SDL,
+				);
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
 				PRODUCT_NAME = platformer;
@@ -525,6 +545,7 @@
 				HEADER_SEARCH_PATHS = (
 					"$(HOME)/Library/Frameworks/SDL.framework/Headers",
 					/Library/Frameworks/SDL.framework/Headers,
+					/Library/Frameworks/SDL_image.framework/Headers,
 					"$(HEADER_SEARCH_PATHS)",
 					"$(HOME)/Projects/c++/platformer/inc",
 					/usr/local/include/SDL,
@@ -552,6 +573,7 @@
 				HEADER_SEARCH_PATHS = (
 					"$(HOME)/Library/Frameworks/SDL.framework/Headers",
 					/Library/Frameworks/SDL.framework/Headers,
+					/Library/Frameworks/SDL_image.framework/Headers,
 					"$(HEADER_SEARCH_PATHS)",
 					"$(HOME)/Projects/c++/platformer/inc",
 					/usr/local/include/SDL,

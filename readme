@@ -9,5 +9,6 @@ NOTE:
     3. Now run "make".
 
 TODO:
+    * Make OSX project build a "main" that does the same thing as "main" for other platforms.
     * For OSX builds, copy built executable to project root.
     * Finish cleaning up all source files.

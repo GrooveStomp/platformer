@@ -3,7 +3,7 @@
 #include "world/gamestate.h"
 
 #include <SDL.h>
-#include <SDL/SDL_image.h>
+#include <SDL_image.h>
 #include <SDL_opengl.h>
 
 namespace fob {
