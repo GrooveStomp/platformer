@@ -3,10 +3,6 @@ Tooling around with Data-Driven-Design.
 
 Not much to see so far.  Still cleaning out clutter and getting this building on OSX and Linux.
 
-NOTE:
-    1. makefile is named "makefile.template" and should be renamed to "makefile" locally.
-    2. Run "./configure".
-    3. Now run "make".
-
-TODO:
-    * Route output to command-line on OSX.
+Usage:
+    1. ./configure (must have python installed)
+    2. make
