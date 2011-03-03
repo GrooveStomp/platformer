@@ -9,4 +9,4 @@ NOTE:
     3. Now run "make".
 
 TODO:
-    * For OSX builds, copy built executable to project root.
+    * Route output to command-line on OSX.
