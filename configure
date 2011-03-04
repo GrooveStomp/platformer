@@ -92,7 +92,6 @@ def Usage():
     print "usage: " + __file__ + " [options]"
     print "options:"
     print "\t[-d|--debug] configure for a debug build"
-    print "\t[-p|--platform] specify which platform to build for.  One of osx, linux or windows."
 
 
 #-----------------------------------------------------------------------------
