@@ -24,7 +24,9 @@ struct PlayerState
 //
 namespace PlayerUtils
 {
-    void Update(float dt, GameState &state);
+    void Update(PlayerState &player, const GameState &state);
+    void Copy(const PlayerState &other, PlayerState &player);
+    void Draw(const PlayerState &player, const GameState &state);
 }
 
     } // namespace world

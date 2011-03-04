@@ -75,6 +75,7 @@ namespace ApplicationUtils
             if (app.timer.Expired())
             {
                 fob::world::GameStateUtils::Update(state);
+                fob::world::GameStateUtils::Draw(state);
 
                 if (fob::world::GameStateUtils::ShouldExit(state)) {
                     app.running = false;

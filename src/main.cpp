@@ -10,19 +10,13 @@
 
 int main(int argc, char *argv[])
 {
-#if PLATFORM_OSX
-    printf("OSX!\n");
-#elif PLATFORM_LINUX
-    printf("LINUX!\n");
-#else
-    printf("OTHER!\n");
-#endif
-
     printf("Creating ApplicationState\n");
     fob::system::ApplicationState app(320, 240);
 
     printf("Creating GameState\n");
     fob::world::GameState state;
+    state.player.width = 50;
+    state.player.height = 50;
 
     printf("Running ApplicationState with GameState\n");
     fob::system::ApplicationUtils::Run(app, state);

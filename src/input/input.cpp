@@ -11,10 +11,8 @@ namespace InputUtils
 {
     //------------------------------------------------------------------------
     //
-    InputState Update(const fob::world::GameState &state)
+    void Update(InputState &input, const fob::world::GameState &state)
     {
-        InputState input;
-
         SDL_Event keyevent;
         while (SDL_PollEvent(&keyevent)) {
             if (keyevent.type == SDL_KEYDOWN) {
@@ -27,6 +25,12 @@ namespace InputUtils
                 else if (keyevent.key.keysym.sym == SDLK_RIGHT) {
                     input = InputState(InputAction::Right);
                 }
+                else if (keyevent.key.keysym.sym == SDLK_UP) {
+                    input = InputState(InputAction::Up);
+                }
+                else if (keyevent.key.keysym.sym == SDLK_DOWN) {
+                    input = InputState(InputAction::Down);
+                }
                 else if (keyevent.key.keysym.sym == SDLK_SPACE) {
                     input = InputState(InputAction::Jump);
                 }
@@ -34,8 +38,6 @@ namespace InputUtils
                 input = InputState(InputAction::None);
             }
         }
-
-        return input;
     }
 }
 

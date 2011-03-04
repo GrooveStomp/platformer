@@ -22,6 +22,7 @@ struct GameState
 namespace GameStateUtils
 {
     void Update(GameState &state);
+    void Draw(const GameState &state);
     bool ShouldExit(const GameState &state);
 }
 
