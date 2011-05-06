@@ -11,12 +11,12 @@
 int main(int argc, char *argv[])
 {
     printf("Creating ApplicationState\n");
-    fob::system::ApplicationState app(320, 240);
+    fob::system::ApplicationState app(480, 320);
 
     printf("Creating GameState\n");
     fob::world::GameState state;
-    state.player.width = 50;
-    state.player.height = 50;
+    state.player.width = 8;
+    state.player.height = 16;
 
     printf("Running ApplicationState with GameState\n");
     fob::system::ApplicationUtils::Run(app, state);

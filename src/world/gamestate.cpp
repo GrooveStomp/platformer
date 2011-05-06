@@ -22,10 +22,14 @@ namespace GameStateUtils
     void Draw(const GameState &state)
     {
         glClearColor(0.0, 0.0, 0.0, 1.0);
-        glViewport(0, 0, 320, 240);
+        // TODO: AOMAN: Need to synchronize this with ApplicationState
+        // initialization!
+        float width = 480;
+        float height = 320;
+        glViewport(0, 0, width, height);
         glMatrixMode(GL_PROJECTION);
         glLoadIdentity();
-        glOrtho(-160, 160, -120, 120, -1, 1);
+        glOrtho(-(width/2), (width/2), -(height/2), (height/2), -1, 1);
         glMatrixMode(GL_MODELVIEW);
         glLoadIdentity();
 
