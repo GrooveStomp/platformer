@@ -15,7 +15,8 @@ SOURCES=src/main.cpp \
         src/system/timer.cpp \
         src/system/unique.cpp \
 		src/system/application.cpp \
-		src/input/input.cpp
+		src/input/input.cpp \
+		src/system/queue.cpp
 OBJECTS=$(SOURCES:.cpp=.o)
 CC=g++
 DEBUG=
