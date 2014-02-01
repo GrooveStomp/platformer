@@ -5,34 +5,27 @@
 #include <stdio.h>
 #include <SDL_opengl.h>
 
-namespace fob {
-    namespace world {
+namespace fob { namespace world { namespace PlayerUtils {
 
-//----------------------------------------------------------------------------
-// Public utility functions that operate on player state.
-//
-namespace PlayerUtils
-{
-    //------------------------------------------------------------------------
-    //
     void Update(PlayerState &player, const GameState &state)
     {
         using namespace fob::math;
         using namespace fob::math::Vec2Utils;
 
         if (fob::input::InputAction::Left == state.input.action) {
-            player.position = Add(player.position, Vec2(-1, 0));
-        } else if (fob::input::InputAction::Right == state.input.action) {
-            player.position = Add(player.position, Vec2(1, 0));
-        } else if (fob::input::InputAction::Down == state.input.action) {
-            player.position = Add(player.position, Vec2(0, -1));
-        } else if (fob::input::InputAction::Up == state.input.action) {
-            player.position = Add(player.position, Vec2(0, 1));
+            player.position = Add(player.position, Left());
+        }
+        else if (fob::input::InputAction::Right == state.input.action) {
+            player.position = Add(player.position, Right());
+        }
+        else if (fob::input::InputAction::Down == state.input.action) {
+            player.position = Add(player.position, Down());
+        }
+        else if (fob::input::InputAction::Up == state.input.action) {
+            player.position = Add(player.position, Up());
         }
     }
 
-    //------------------------------------------------------------------------
-    //
     void Draw(const PlayerState &player, const GameState &state)
     {
         glPushMatrix();
@@ -50,8 +43,6 @@ namespace PlayerUtils
         glPopMatrix();
     }
 
-    //------------------------------------------------------------------------
-    //
     void Copy(const PlayerState &other, PlayerState &player)
     {
         player.width = other.width;
@@ -60,7 +51,5 @@ namespace PlayerUtils
         player.position.y = other.position.y;
         player.rotation = other.rotation;
     }
-}
 
-    } // namespace world
-} // namespace fob
+} } }

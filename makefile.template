@@ -32,7 +32,7 @@ EXECUTABLE=platformer
 all: $(SOURCES) $(EXECUTABLE)
 
 $(EXECUTABLE): $(OBJECTS)
-	$(CC) $(LFLAGS) $(LINCLUDES) $(OBJECTS) -o $@
+	$(CC) $(OBJECTS) -o $@ $(LFLAGS) $(LINCLUDES)
 
 .cpp.o:
 	$(CC) $(CFLAGS) $(CINCLUDES) $(DEFINES) $< -o $@
