@@ -5,7 +5,10 @@
 #include <stdio.h>
 #include <SDL_opengl.h>
 
-namespace fob { namespace world { namespace PlayerUtils {
+namespace fob {
+    namespace world {
+
+namespace PlayerUtils {
 
     void Update(PlayerState &player, const GameState &state)
     {
@@ -52,4 +55,7 @@ namespace fob { namespace world { namespace PlayerUtils {
         player.rotation = other.rotation;
     }
 
-} } }
+} // namespace PlayerUtils
+
+    } // namespace world
+} // namespace fob
