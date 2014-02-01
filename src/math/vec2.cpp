@@ -52,6 +52,26 @@ namespace Vec2Utils
         float l = 1.0 / Length(v);
         return Vec2(v.x * l, v.y * l);
     }
+
+    const Vec2 Left()
+    {
+        return Vec2(-1, 0);
+    }
+
+    const Vec2 Right()
+    {
+        return Vec2(1, 0);
+    }
+
+    const Vec2 Up()
+    {
+        return Vec2(0, 1);
+    }
+
+    const Vec2 Down()
+    {
+        return Vec2(0, -1);
+    }
 }
 
     } // namespace math

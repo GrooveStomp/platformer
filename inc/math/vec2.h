@@ -25,6 +25,11 @@ namespace Vec2Utils
     bool Equal(const Vec2 &l, const Vec2 &r);
     float Length(const Vec2 &v);
     Vec2 Normalize(const Vec2 &v);
+
+    const Vec2 Left();
+    const Vec2 Right();
+    const Vec2 Up();
+    const Vec2 Down();
 }
 
     } // namespace math
