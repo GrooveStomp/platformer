@@ -13,7 +13,6 @@ SOURCES=src/main.cpp \
         src/graphics/font.cpp \
         src/graphics/texture.cpp \
         src/system/timer.cpp \
-        src/system/unique.cpp \
 		src/system/application.cpp \
 		src/input/input.cpp \
 		src/system/queue.cpp \
