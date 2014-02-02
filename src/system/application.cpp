@@ -24,7 +24,7 @@ namespace ApplicationUtils
         float framerate = 0.025;
         const char *title = "Platformer Demo";
 
-        app.timer.Init(framerate);
+        TimerUtils::Init(app.timer, framerate);
 
         if (SDL_Init(SDL_INIT_VIDEO | SDL_INIT_TIMER) != 0)
         {
@@ -68,11 +68,11 @@ namespace ApplicationUtils
             return false;
 
         app.running = true;
-        app.timer.Reset();
+        TimerUtils::Reset(app.timer);
 
         while (app.running)
         {
-            if (app.timer.Expired())
+            if (TimerUtils::IsExpired(app.timer))
             {
                 fob::world::GameStateUtils::Update(state);
                 fob::world::GameStateUtils::Draw(state);
@@ -81,7 +81,7 @@ namespace ApplicationUtils
                     app.running = false;
                 }
 
-                app.timer.Reset();
+                TimerUtils::Reset(app.timer);
             }
         }
 

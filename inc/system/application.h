@@ -17,7 +17,7 @@ struct ApplicationState
         width(iwidth), height(iheight), running(false), skip_fe(false) {}
     int width;
     int height;
-    fob::system::Timer timer;
+    fob::system::TimerState timer;
     bool running;
     bool skip_fe;
 };

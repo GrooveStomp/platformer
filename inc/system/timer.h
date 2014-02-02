@@ -7,33 +7,28 @@
 #ifndef TIMER_H
 #define TIMER_H
 
-#include <sys/time.h>
-#include <stdint.h>
-#include <stdbool.h>
-#include <stddef.h>
-
 namespace fob {
     namespace system {
 
-        static const unsigned usec_per_sec = 1000000;
-        static const unsigned usec_per_msec = 1000;
+struct TimerState
+{
+    TimerState(): start(0), pauseStart(0), hold(0), duration(0) {}
+    long long start;
+    long long pauseStart;
+    long long hold;
+    float duration;
+};
 
-        class Timer {
-            public:
-                Timer(float milliseconds=0);
-                void Init(float milliseconds=-1);
-                void Reset();
-                bool Expired();
-                float Elapsed(); // milliseconds
-                float Length();
-                void Pause();
-                void UnPause();
-
-                int64_t _start;
-                int64_t _pause_start;
-                int64_t _hold;
-                float _duration;
-        };
+namespace TimerUtils
+{
+    void Init(TimerState& timer, float milliseconds = -1);
+    void Reset(TimerState& timer);
+    bool IsExpired(const TimerState& timer);
+    float TimeElapsed(const TimerState &timer);
+    float Length(const TimerState &timer);
+    void Pause(TimerState &timer);
+    void UnPause(TimerState &timer);
+}
 
     } // system
 } // fob

@@ -3,79 +3,79 @@
 // Contact: aaron.oman@gmail.com
 // Date: Oct 19 2009
 //-----------------------------------------------------------------------------
+#include <sys/time.h>
+#include <stddef.h>
 
 #include "system/timer.h"
-#include "stdio.h"
 
 namespace fob {
     namespace system {
 
-        Timer::Timer(float milliseconds) :
-            _pause_start(0),
-            _hold(0)
-        {
-            struct timeval time;
-            _duration = milliseconds * usec_per_msec;
+namespace TimerUtils {
+    static const unsigned int usec_per_sec = 1000000;
+    static const unsigned int usec_per_msec = 1000;
 
-            gettimeofday(&time, NULL);
-            _start = time.tv_usec /* microseconds */ + time.tv_sec * usec_per_sec /* seconds */;
+    void Init(TimerState& timer, float milliseconds)
+    {
+        if (milliseconds != -1) {
+            timer.duration = milliseconds * usec_per_msec;
+        }
+        Reset(timer);
+    }
+
+    void Reset(TimerState& timer)
+    {
+        struct timeval time;
+        gettimeofday(&time, NULL);
+        timer.pauseStart = timer.start = time.tv_usec /* microseconds */ + time.tv_sec * usec_per_sec /* seconds */;
+        timer.hold = 0;
+    }
+
+    bool IsExpired(const TimerState& timer)
+    {
+        struct timeval time;
+        long long current;
+        gettimeofday(&time, NULL);
+        current = time.tv_usec /* microseconds */ + time.tv_sec * usec_per_sec /* seconds */;
+
+        long long diff = (current - timer.start) - timer.hold;
+        if (diff >= timer.duration) {
+            return true;
         }
 
-        void Timer::Reset() {
-            struct timeval time;
-            gettimeofday(&time, NULL);
-            _pause_start = _start = time.tv_usec /* microseconds */ + time.tv_sec * usec_per_sec /* seconds */;
-            _hold = 0;
-        }
+        return false;
+    }
 
-        void Timer::Init(float milliseconds) {
-            if (milliseconds != -1) {
-                _duration = milliseconds * usec_per_msec;
-            }
-            Reset();
-        }
+    float TimeElapsed(const TimerState& timer)
+    {
+        struct timeval time;
+        long long current;
+        gettimeofday(&time, NULL);
+        current = time.tv_usec /* microseconds */ + time.tv_sec * usec_per_sec /* milliseconds */;
 
-        void Timer::Pause() {
-            struct timeval time;
-            gettimeofday(&time, NULL);
-            _pause_start = time.tv_usec /* microseconds */ + time.tv_sec * usec_per_sec /* milliseconds */;
-        }
+        return ((current - timer.start) - timer.hold) / usec_per_msec;
+    }
 
-        void Timer::UnPause() {
-            struct timeval time;
-            int64_t pause_end;
-            gettimeofday(&time, NULL);
-            pause_end = time.tv_usec /* microseconds */ + time.tv_sec * usec_per_sec /* milliseconds */;
-            _hold += (pause_end - _pause_start);
-            _pause_start = pause_end;
-        }
+    float Length(const TimerState& timer) {
+        return timer.duration / usec_per_msec;
+    }
 
-        bool Timer::Expired() {
-            struct timeval time;
-            int64_t current;
-            gettimeofday(&time, NULL);
-            current = time.tv_usec /* microseconds */ + time.tv_sec * usec_per_sec /* seconds */;
+    void Pause(TimerState& timer) {
+        struct timeval time;
+        gettimeofday(&time, NULL);
+        timer.pauseStart = time.tv_usec /* microseconds */ + time.tv_sec * usec_per_sec /* milliseconds */;
+    }
 
-            int64_t diff = (current - _start) - _hold;
-            if (diff >= _duration) {
-                return true;
-            }
+    void UnPause(TimerState& timer) {
+        struct timeval time;
+        long long pause_end;
+        gettimeofday(&time, NULL);
+        pause_end = time.tv_usec /* microseconds */ + time.tv_sec * usec_per_sec /* milliseconds */;
+        timer.hold += (pause_end - timer.pauseStart);
+        timer.pauseStart = pause_end;
+    }
 
-            return false;
-        }
-
-        float Timer::Elapsed() {
-            struct timeval time;
-            int64_t current;
-            gettimeofday(&time, NULL);
-            current = time.tv_usec /* microseconds */ + time.tv_sec * usec_per_sec /* milliseconds */;
-
-            return ((current - _start) - _hold) / usec_per_msec;
-        }
-
-        float Timer::Length() {
-            return _duration / usec_per_msec;
-        }
+}
 
     } // namespace system
 } // namespace fob
