@@ -16,7 +16,8 @@ SOURCES=src/main.cpp \
         src/system/unique.cpp \
 		src/system/application.cpp \
 		src/input/input.cpp \
-		src/system/queue.cpp
+		src/system/queue.cpp \
+		src/system/queuenotifier.cpp
 OBJECTS=$(SOURCES:.cpp=.o)
 CC=g++
 DEBUG=
