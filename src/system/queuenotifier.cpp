@@ -31,11 +31,11 @@ namespace QueueNotifierUtils {
         }
 
         notifier.queues[notifier.queueCount] = &queue;
-        strncpy((char *)(notifier.queueUuids[notifier.queueCount]), (char *)(queue.uuid), 16);
+        strncpy((char *)(notifier.queueUuids[notifier.queueCount]), (char *)(queue.uuid), UUID_SIZE);
         notifier.queueCount++;
     }
 
-    void BroadcastMessage(const QueueNotifierState& notifier, const int message)
+    void Send(const QueueNotifierState& notifier, const int message)
     {
         for (unsigned int i=0; i < notifier.queueCount; i++)
         {

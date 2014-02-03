@@ -1,6 +1,9 @@
 #ifndef FOB_INPUT_INPUT_H
 #define FOB_INPUT_INPUT_H
 
+#include "system/queue.h"
+#include "system/queuenotifier.h"
+
 namespace fob {
     namespace world {
         struct GameState;
@@ -35,7 +38,8 @@ struct InputState
 //
 namespace InputUtils
 {
-    void Update(InputState &input, const fob::world::GameState &state);
+    using namespace fob::system;
+    void Update(InputState& input, const QueueState& readQueue, QueueNotifierState& writeQueue);
 }
 
     } // namespace input

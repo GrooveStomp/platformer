@@ -16,7 +16,9 @@ SOURCES=src/main.cpp \
 		src/system/application.cpp \
 		src/input/input.cpp \
 		src/system/queue.cpp \
-		src/system/queuenotifier.cpp
+		src/system/queuenotifier.cpp \
+		src/world/manager/input_manager.cpp \
+		src/world/manager/player_manager.cpp
 OBJECTS=$(SOURCES:.cpp=.o)
 CC=g++
 DEBUG=

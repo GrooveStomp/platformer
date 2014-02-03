@@ -1,6 +1,7 @@
 #include "world/player.h"
-
 #include "world/gamestate.h"
+#include "system/queue.h"
+#include "system/queuenotifier.h"
 
 #include <stdio.h>
 #include <SDL_opengl.h>
@@ -10,22 +11,35 @@ namespace fob {
 
 namespace PlayerUtils {
 
-    void Update(PlayerState &player, const GameState &state)
+    void HandleEvent(PlayerState &player, const int event)
+    {
+        using namespace fob::math;
+        using namespace fob::math::Vec2Utils;
+        using namespace fob::system;
+
+        if (fob::input::InputAction::Left == event) {
+            player.position = Add(player.position, Left());
+        }
+        else if (fob::input::InputAction::Right == event) {
+            player.position = Add(player.position, Right());
+        }
+        else if (fob::input::InputAction::Down == event) {
+            player.position = Add(player.position, Down());
+        }
+        else if (fob::input::InputAction::Up == event) {
+            player.position = Add(player.position, Up());
+        }
+
+    }
+
+    void Update(PlayerState &player, const fob::system::QueueState& readQueue, fob::system::QueueNotifierState& writeQueue)
     {
         using namespace fob::math;
         using namespace fob::math::Vec2Utils;
 
-        if (fob::input::InputAction::Left == state.input.action) {
-            player.position = Add(player.position, Left());
-        }
-        else if (fob::input::InputAction::Right == state.input.action) {
-            player.position = Add(player.position, Right());
-        }
-        else if (fob::input::InputAction::Down == state.input.action) {
-            player.position = Add(player.position, Down());
-        }
-        else if (fob::input::InputAction::Up == state.input.action) {
-            player.position = Add(player.position, Up());
+        for (unsigned int i=0; i < readQueue.messageCount; i++)
+        {
+            HandleEvent(player, readQueue.messages[i]);
         }
     }
 

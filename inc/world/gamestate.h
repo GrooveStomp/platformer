@@ -1,24 +1,25 @@
 #ifndef FOB_WORLD_GAMESTATE_H
 #define FOB_WORLD_GAMESTATE_H
 
+#include "system/types.h"
 #include "input/input.h"
 #include "world/player.h"
 
 namespace fob {
     namespace world {
 
-//----------------------------------------------------------------------------
-//! GameState contains all the state for the whole game.
-//!
+      namespace manager {
+        struct InputManagerState;
+        struct PlayerManagerState;
+      }
+
 struct GameState
 {
     GameState() {};
-    fob::input::InputState input;
-    fob::world::PlayerState player;
+    fob::world::manager::PlayerManagerState* playerManager;
+    fob::world::manager::InputManagerState* inputManager;
 };
 
-//-----------------------------------------------------------------------------
-//
 namespace GameStateUtils
 {
     void Update(GameState &state);
@@ -29,4 +30,4 @@ namespace GameStateUtils
     } // namespace world
 } // namespace fob
 
-#endif
+#endif // FOB_WORLD_GAMESTATE_H

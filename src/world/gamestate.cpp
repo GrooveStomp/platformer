@@ -1,4 +1,6 @@
 #include "world/gamestate.h"
+#include "world/manager/input_manager.h"
+#include "world/manager/player_manager.h"
 
 #include <stdio.h>
 #include <SDL.h>
@@ -13,8 +15,10 @@ namespace GameStateUtils
     //
     void Update(GameState &state)
     {
-        fob::input::InputUtils::Update(state.input, state);
-        fob::world::PlayerUtils::Update(state.player, state);
+        using namespace fob::world::manager;
+
+        InputManagerUtils::Update(*state.inputManager);
+        PlayerManagerUtils::Update(*state.playerManager);
     }
 
     //------------------------------------------------------------------------
@@ -47,7 +51,7 @@ namespace GameStateUtils
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
         glLoadIdentity();
 
-        fob::world::PlayerUtils::Draw(state.player, state);
+        // fob::world::PlayerUtils::Draw(state.player, state);
 
         SDL_GL_SwapBuffers();
     }
@@ -56,7 +60,8 @@ namespace GameStateUtils
     //
     bool ShouldExit(const GameState &state)
     {
-        return (state.input.action == fob::input::InputAction::Quit);
+        return false;
+        // return (state.input.action == fob::input::InputAction::Quit);
     }
 }
 

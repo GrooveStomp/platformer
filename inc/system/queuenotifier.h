@@ -3,6 +3,8 @@
 
 #include <limits.h>
 
+#include "system/types.h"
+
 namespace fob {
     namespace system {
 
@@ -21,12 +23,13 @@ struct QueueState;
 struct QueueNotifierState {
     QueueNotifierState(): queueCount(0) {}
     unsigned int queueCount;
-    unsigned char queueUuids[UCHAR_MAX][16];
+    unsigned char queueUuids[UCHAR_MAX][UUID_SIZE];
     QueueState* queues[UCHAR_MAX];
 };
 
 namespace QueueNotifierUtils {
     void Subscribe(QueueNotifierState& notifier, QueueState& queue);
+    void Send(const QueueNotifierState& notifier, const int message);
 }
 
     } // namespace system

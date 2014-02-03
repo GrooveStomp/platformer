@@ -1,6 +1,8 @@
 #ifndef FOB_SYSTEM_QUEUE
 #define FOB_SYSTEM_QUEUE
 
+#include "system/types.h"
+
 #include <limits.h>
 
 namespace fob {
@@ -25,7 +27,7 @@ namespace QueueMessage
 
 struct QueueState {
     QueueState(): messageCount(0), head(0) {}
-    unsigned char uuid[16];
+    unsigned char uuid[UUID_SIZE];
     unsigned int messageCount;
     unsigned int head;
     int messages[UINT_MAX];
@@ -37,6 +39,7 @@ namespace QueueUtils {
     void Subscribe(QueueState& queue, QueueNotifierState& notifier);
     const int Read(QueueState& queue);
     bool Equal(const QueueState& left, const QueueState& right);
+    void Clear(QueueState& queue);
 }
 
     }

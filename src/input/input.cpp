@@ -7,35 +7,33 @@
 namespace fob {
     namespace input {
 
-namespace InputUtils
-{
-    //------------------------------------------------------------------------
-    //
-    void Update(InputState &input, const fob::world::GameState &state)
+namespace InputUtils {
+
+    void Update(InputState& input, const QueueState& readQueue, QueueNotifierState& writeQueue)
     {
+        using namespace fob::system::QueueNotifierUtils;
+
         SDL_Event keyevent;
         while (SDL_PollEvent(&keyevent)) {
             if (keyevent.type == SDL_KEYDOWN) {
                 if (keyevent.key.keysym.sym == SDLK_ESCAPE) {
-                    input = InputState(InputAction::Quit);
+                    Send(writeQueue, InputAction::Quit);
                 }
                 else if (keyevent.key.keysym.sym == SDLK_LEFT) {
-                    input = InputState(InputAction::Left);
+                    Send(writeQueue, InputAction::Left);
                 }
                 else if (keyevent.key.keysym.sym == SDLK_RIGHT) {
-                    input = InputState(InputAction::Right);
+                    Send(writeQueue, InputAction::Right);
                 }
                 else if (keyevent.key.keysym.sym == SDLK_UP) {
-                    input = InputState(InputAction::Up);
+                    Send(writeQueue, InputAction::Up);
                 }
                 else if (keyevent.key.keysym.sym == SDLK_DOWN) {
-                    input = InputState(InputAction::Down);
+                    Send(writeQueue, InputAction::Down);
                 }
                 else if (keyevent.key.keysym.sym == SDLK_SPACE) {
-                    input = InputState(InputAction::Jump);
+                    Send(writeQueue, InputAction::Jump);
                 }
-            } else {
-                input = InputState(InputAction::None);
             }
         }
     }

@@ -65,6 +65,12 @@ namespace QueueUtils {
 
         return true;
     }
+
+    void Clear(QueueState& queue)
+    {
+        queue.messageCount = 0;
+        queue.head = 0;
+    }
 }
 
     }
