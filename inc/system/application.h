@@ -7,9 +7,8 @@ namespace fob {
     namespace world {
         struct GameState;
     }
+
     namespace system {
-        struct QueueState;
-        struct QueueNotifierState;
 
 //-----------------------------------------------------------------------------
 //
@@ -22,16 +21,13 @@ struct ApplicationState
     fob::system::TimerState timer;
     bool running;
     bool skip_fe;
-
-    QueueState* messageQueue;
-    QueueNotifierState* messageNotifier;
 };
 
 //-----------------------------------------------------------------------------
 //
 namespace ApplicationUtils
 {
-    bool Run(fob::system::ApplicationState &app, fob::world::GameState &state);
+    bool Run(fob::system::ApplicationState* const app, fob::world::GameState* const state);
 }
 
     } // namespace system

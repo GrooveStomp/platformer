@@ -56,8 +56,6 @@ int main(int argc, char *argv[])
 
     printf("Creating ApplicationState\n");
     fob::system::ApplicationState app(480, 320);
-    app.messageQueue = &appQueue;
-    app.messageNotifier = &appMessages;
 
     // -------------------------------------------------------------------------
     // Player
@@ -95,9 +93,11 @@ int main(int argc, char *argv[])
     fob::world::GameState state;
     state.playerManager = &playerManager;
     state.inputManager = &inputManager;
+    state.messageQueue = &appQueue;
+    state.messageNotifier = &appMessages;
 
     printf("Running ApplicationState with GameState\n");
-    fob::system::ApplicationUtils::Run(app, state);
+    fob::system::ApplicationUtils::Run(&app, &state);
 
     return 0;
 }

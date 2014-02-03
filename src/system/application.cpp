@@ -11,13 +11,13 @@ namespace fob {
 
 namespace ApplicationUtils {
 
-    bool Init(ApplicationState &app)
+    bool Init(ApplicationState* const app)
     {
         /* Need to encapsulate these somehow */
         float framerate = 0.025;
         const char *title = "Platformer Demo";
 
-        TimerUtils::Init(app.timer, framerate);
+        TimerUtils::Init(app->timer, framerate);
 
         if (SDL_Init(SDL_INIT_VIDEO | SDL_INIT_TIMER) != 0)
         {
@@ -27,8 +27,8 @@ namespace ApplicationUtils {
 
         SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1);
         SDL_Surface* screen = SDL_SetVideoMode(
-            app.width,
-            app.height,
+            app->width,
+            app->height,
             16,
             SDL_OPENGL
         );
@@ -36,8 +36,8 @@ namespace ApplicationUtils {
         {
             printf(
                 "Couldn't set %dx%d video mode: %s\n",
-                app.width,
-                app.height,
+                app->width,
+                app->height,
                 SDL_GetError()
             );
             return false;
@@ -55,26 +55,26 @@ namespace ApplicationUtils {
 
     //------------------------------------------------------------------------
     //
-    bool Run(fob::system::ApplicationState &app, fob::world::GameState &state)
+    bool Run(fob::system::ApplicationState* const app, fob::world::GameState* const state)
     {
         if (!Init(app))
             return false;
 
-        app.running = true;
-        TimerUtils::Reset(app.timer);
+        app->running = true;
+        TimerUtils::Reset(app->timer);
 
-        while (app.running)
+        while (app->running)
         {
-            if (TimerUtils::IsExpired(app.timer))
+            if (TimerUtils::IsExpired(app->timer))
             {
-                fob::world::GameStateUtils::Update(&state);
-                fob::world::GameStateUtils::Draw(&state);
+                fob::world::GameStateUtils::Update(state);
+                fob::world::GameStateUtils::Draw(state);
 
-                if (fob::world::GameStateUtils::ShouldExit(&state)) {
-                    app.running = false;
+                if (fob::world::GameStateUtils::ShouldExit(state)) {
+                    app->running = false;
                 }
 
-                TimerUtils::Reset(app.timer);
+                TimerUtils::Reset(app->timer);
             }
         }
 

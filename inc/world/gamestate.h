@@ -2,6 +2,12 @@
 #define FOB_WORLD_GAMESTATE_H
 
 namespace fob {
+
+    namespace system {
+        struct QueueState;
+        struct QueueNotifierState;
+    }
+
     namespace world {
 
       namespace manager {
@@ -9,11 +15,15 @@ namespace fob {
         struct PlayerManagerState;
       }
 
+
 struct GameState
 {
     GameState() {};
     fob::world::manager::PlayerManagerState* playerManager;
     fob::world::manager::InputManagerState* inputManager;
+
+    fob::system::QueueState* messageQueue;
+    fob::system::QueueNotifierState* messageNotifier;
 };
 
 namespace GameStateUtils

@@ -1,6 +1,9 @@
 #include "world/gamestate.h"
 #include "world/manager/input_manager.h"
 #include "world/manager/player_manager.h"
+#include "input/input.h"
+#include "system/queue.h"
+#include "system/queuenotifier.h"
 
 #include <stdio.h>
 #include <SDL.h>
@@ -60,8 +63,15 @@ namespace GameStateUtils
     //
     bool ShouldExit(const GameState* const state)
     {
+        fob::system::QueueState* events = state->messageQueue;
+        for (unsigned int i=0; i < events->messageCount; i++)
+        {
+            if (fob::input::InputAction::Quit == events->messages[i])
+            {
+                return true;
+            }
+        }
         return false;
-        // return (state->input->action == fob::input::InputAction::Quit);
     }
 }
 
