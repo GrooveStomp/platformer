@@ -26,7 +26,7 @@ namespace QueueNotifierUtils {
             return;
         }
 
-        if (notifier->queueCount >= UCHAR_MAX) {
+        if (notifier->queueCount >= QUEUE_SIZE) {
             return;
         }
 

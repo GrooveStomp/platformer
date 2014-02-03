@@ -13,7 +13,7 @@ namespace PlayerManagerUtils
 {
     void Add(PlayerManagerState* const manager, PlayerState* const player)
     {
-        if (UCHAR_MAX == manager->playerCount) {
+        if (QUEUE_SIZE == manager->playerCount) {
             return;
         }
 

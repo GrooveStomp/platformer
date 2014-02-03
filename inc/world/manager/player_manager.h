@@ -2,7 +2,6 @@
 #define FOB_WORLD_MANAGER_PLAYER_MANAGER_H
 
 #include "system/types.h"
-#include <limits.h>
 
 namespace fob {
 
@@ -19,8 +18,8 @@ namespace fob {
 struct PlayerManagerState
 {
     PlayerManagerState(): playerCount(0) {}
-    PlayerState* players[UCHAR_MAX];
-    unsigned char playerUuids[UCHAR_MAX][UUID_SIZE];
+    PlayerState* players[QUEUE_SIZE];
+    unsigned char playerUuids[QUEUE_SIZE][UUID_SIZE];
     fob::system::QueueState* messageQueue;
     fob::system::QueueNotifierState* messageNotifier;
     unsigned int playerCount;

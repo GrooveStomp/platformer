@@ -3,7 +3,6 @@
 
 #include "system/types.h"
 
-#include <limits.h>
 #include <uuid/uuid.h>
 
 

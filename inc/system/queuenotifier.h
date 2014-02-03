@@ -1,8 +1,6 @@
 #ifndef FOB_SYSTEM_QUEUE_NOTIFIER
 #define FOB_SYSTEM_QUEUE_NOTIFIER
 
-#include <limits.h>
-
 #include "system/types.h"
 
 namespace fob {
@@ -13,7 +11,7 @@ struct QueueState;
 /* The Queue Notifier works like Amazon SNS.
  * It is a point of communication to subscribed queues.
  * As far as implementation goes:
- * - QueueNotifier stores a list of queues.  It holds a max of UCHAR_MAX
+ * - QueueNotifier stores a list of queues.  It holds a max of QUEUE_SIZE
  *   queues.
  * - QueueNotifier also stores a list of UUIDs for each queue.  This is for
  *   loading from memory.  Pointer locations will be incorrect during
@@ -23,8 +21,8 @@ struct QueueState;
 struct QueueNotifierState {
     QueueNotifierState(): queueCount(0) {}
     unsigned int queueCount;
-    unsigned char queueUuids[UCHAR_MAX][UUID_SIZE];
-    QueueState* queues[UCHAR_MAX];
+    unsigned char queueUuids[QUEUE_SIZE][UUID_SIZE];
+    QueueState* queues[QUEUE_SIZE];
     char name[MAX_NAME_SIZE];
 };
 
