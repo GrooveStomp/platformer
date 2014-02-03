@@ -34,9 +34,11 @@ int main(int argc, char *argv[])
 
     printf("Creating player write queue\n");
     QueueNotifierState playerWriteQueue;
+    QueueNotifierUtils::Name(&playerWriteQueue, "playerWriteQueue");
 
     printf("Creating player read queue\n");
     QueueState playerReadQueue;
+    QueueUtils::Name(&playerReadQueue, "playerReadQueue");
     QueueUtils::Init(&playerReadQueue);
     QueueUtils::Subscribe(&playerReadQueue, &playerWriteQueue);
 
@@ -55,9 +57,11 @@ int main(int argc, char *argv[])
 
     printf("Creating input write queue\n");
     QueueNotifierState inputWriteQueue;
+    QueueNotifierUtils::Name(&inputWriteQueue, "inputWriteQueue");
 
     printf("Creating input read queue\n");
     QueueState inputReadQueue;
+    QueueUtils::Name(&inputReadQueue, "inputReadQueue");
     QueueUtils::Init(&inputReadQueue);
     QueueUtils::Subscribe(&inputReadQueue, &inputWriteQueue);
 

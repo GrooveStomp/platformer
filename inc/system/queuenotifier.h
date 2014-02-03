@@ -25,11 +25,13 @@ struct QueueNotifierState {
     unsigned int queueCount;
     unsigned char queueUuids[UCHAR_MAX][UUID_SIZE];
     QueueState* queues[UCHAR_MAX];
+    char name[MAX_NAME_SIZE];
 };
 
 namespace QueueNotifierUtils {
     void Subscribe(QueueNotifierState* const notifier, QueueState* const queue);
     void Send(const QueueNotifierState* const notifier, const int message);
+    void Name(QueueNotifierState* const notifier, const char* const name);
 }
 
     } // namespace system

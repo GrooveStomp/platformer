@@ -1,7 +1,8 @@
-#include <uuid/uuid.h>
-
 #include "system/queue.h"
 #include "system/queuenotifier.h"
+
+#include <uuid/uuid.h>
+#include <string.h>
 
 namespace fob {
     namespace system {
@@ -70,6 +71,11 @@ namespace QueueUtils {
     {
         queue->messageCount = 0;
         queue->head = 0;
+    }
+
+    void Name(QueueState* const queue, const char* const name)
+    {
+        strncpy((char*)queue->name, name, sizeof(name));
     }
 }
 

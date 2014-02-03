@@ -1,7 +1,7 @@
-#include <string.h>
-
 #include "system/queuenotifier.h"
 #include "system/queue.h"
+
+#include <string.h>
 
 namespace fob {
     namespace system {
@@ -43,6 +43,10 @@ namespace QueueNotifierUtils {
         }
     }
 
+    void Name(QueueNotifierState* const notifier, const char* const name)
+    {
+        strncpy((char*)notifier->name, name, sizeof(name));
+    }
 }
 
     } // namespace system

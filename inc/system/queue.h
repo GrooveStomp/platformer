@@ -33,6 +33,7 @@ struct QueueState {
     unsigned int messageCount;
     unsigned int head;
     int messages[QUEUE_SIZE];
+    char name[MAX_NAME_SIZE];
 };
 
 namespace QueueUtils {
@@ -42,6 +43,7 @@ namespace QueueUtils {
     const int Read(QueueState* const queue);
     bool Equal(const QueueState* const left, const QueueState* const right);
     void Clear(QueueState* const queue);
+    void Name(QueueState* const queue, const char* const name);
 }
 
     }
