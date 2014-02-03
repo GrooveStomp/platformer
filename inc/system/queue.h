@@ -25,12 +25,14 @@ namespace QueueMessage
 
 struct QueueState {
     QueueState(): messageCount(0), head(0) {}
+    unsigned char uuid[16];
     unsigned int messageCount;
     unsigned int head;
     int messages[UINT_MAX];
 };
 
 namespace QueueUtils {
+    void Init(QueueState& queue);
     void Send(QueueState& queue, const int message);
     void Subscribe(QueueState& queue, QueueNotifierState& notifier);
     const int Read(QueueState& queue);

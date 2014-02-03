@@ -9,15 +9,8 @@
 namespace fob {
     namespace system {
 
-namespace ApplicationUtils
-{
-    //------------------------------------------------------------------------
-    // Private Helper Functions.
-    //------------------------------------------------------------------------
+namespace ApplicationUtils {
 
-
-    //------------------------------------------------------------------------
-    //
     bool Init(ApplicationState &app)
     {
         /* Need to encapsulate these somehow */
@@ -88,7 +81,8 @@ namespace ApplicationUtils
         SDL_Quit();
         return true;
     }
-}
+
+} // namespace ApplicationUtils
 
     } // namespace system
 } // namespace fob

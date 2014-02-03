@@ -1,3 +1,5 @@
+#include <uuid/uuid.h>
+
 #include "system/queue.h"
 #include "system/queuenotifier.h"
 
@@ -10,6 +12,11 @@ namespace QueueUtils {
     {
         const unsigned int tail = (queue.head + queue.messageCount) % UINT_MAX;
         return tail;
+    }
+
+    void Init(QueueState& queue)
+    {
+        uuid_generate(queue.uuid);
     }
 
     void Send(QueueState& queue, const int message)

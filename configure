@@ -26,6 +26,7 @@ def GetHeaderPaths(platform):
         paths += " -I/usr/local/include"
         paths += " -I/usr/local/include/SDL"
         paths += " -I/usr/include/SDL"
+        paths += " -I/usr/include/uuid"
 
     elif "osx" == platform:
         paths += " -I/Library/Frameworks/SDL.framework/Headers"
@@ -40,18 +41,22 @@ def GetHeaderPaths(platform):
 # Return the platform-specific linker flags.
 #
 def GetLinkerFlags(platform):
+    libs = ""
 
     if "linux" == platform:
-        return "-lGL"
+        libs += " -lGL"
+        libs += " -luuid"
 
     elif "osx" == platform:
-        return "-framework OpenGL " + \
-               "-framework SDL " + \
-               "-framework SDL_image " + \
-               "-framework Cocoa"
+        libs += " -framework OpenGL"
+        libs += " -framework SDL"
+        libs += " -framework SDL_image"
+        libs += " -framework Cocoa"
 
     elif "windows" == platform:
-        return ""
+        libs += ""
+
+    return libs
 
 #-----------------------------------------------------------------------------
 # Define a constant which specifies the platform we're working on.
