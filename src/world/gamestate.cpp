@@ -14,8 +14,7 @@ namespace fob {
 
 namespace GameStateUtils
 {
-    //------------------------------------------------------------------------
-    //
+
     void Update(GameState* const state)
     {
         using namespace fob::world::manager;
@@ -24,8 +23,6 @@ namespace GameStateUtils
         PlayerManagerUtils::Update(state->playerManager);
     }
 
-    //------------------------------------------------------------------------
-    //
     void Draw(const GameState *state)
     {
         glClearColor(0.0, 0.0, 0.0, 1.0);
@@ -59,18 +56,21 @@ namespace GameStateUtils
         SDL_GL_SwapBuffers();
     }
 
-    //------------------------------------------------------------------------
-    //
     bool ShouldExit(const GameState* const state)
     {
-        fob::system::QueueState* events = state->messageQueue;
+        using namespace fob::system;
+        using namespace fob::input;
+
+        QueueState* events = state->messageQueue;
         for (unsigned int i=0; i < events->messageCount; i++)
         {
-            if (fob::input::InputAction::Quit == events->messages[i])
+            if (InputAction::Quit == events->messages[i])
             {
                 return true;
             }
         }
+        QueueUtils::Clear(state->messageQueue);
+
         return false;
     }
 }

@@ -1,5 +1,4 @@
 #include "system/application.h"
-
 #include "world/gamestate.h"
 
 #include <SDL.h>
@@ -47,16 +46,10 @@ namespace ApplicationUtils {
         return true;
     }
 
-
-    //------------------------------------------------------------------------
-    // Public class interface functions.
-    //------------------------------------------------------------------------
-
-
-    //------------------------------------------------------------------------
-    //
     bool Run(fob::system::ApplicationState* const app, fob::world::GameState* const state)
     {
+        using namespace fob::world;
+
         if (!Init(app))
             return false;
 
@@ -67,10 +60,11 @@ namespace ApplicationUtils {
         {
             if (TimerUtils::IsExpired(app->timer))
             {
-                fob::world::GameStateUtils::Update(state);
-                fob::world::GameStateUtils::Draw(state);
+                GameStateUtils::Update(state);
+                GameStateUtils::Draw(state);
 
-                if (fob::world::GameStateUtils::ShouldExit(state)) {
+                if (GameStateUtils::ShouldExit(state))
+                {
                     app->running = false;
                 }
 
