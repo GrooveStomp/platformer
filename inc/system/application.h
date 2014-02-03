@@ -8,6 +8,8 @@ namespace fob {
         struct GameState;
     }
     namespace system {
+        struct QueueState;
+        struct QueueNotifierState;
 
 //-----------------------------------------------------------------------------
 //
@@ -20,6 +22,9 @@ struct ApplicationState
     fob::system::TimerState timer;
     bool running;
     bool skip_fe;
+
+    QueueState* messageQueue;
+    QueueNotifierState* messageNotifier;
 };
 
 //-----------------------------------------------------------------------------

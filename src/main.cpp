@@ -19,9 +19,45 @@ using namespace fob::system;
 
 int main(int argc, char *argv[])
 {
-    QueueState queue;
+    // -------------------------------------------------------------------------
+    // Configure Messaging Systems
+    // -------------------------------------------------------------------------
+
+    QueueNotifierState appMessages;
+    QueueNotifierUtils::Name(&appMessages, "Application Messages");
+
+    QueueNotifierState playerMessages;
+    QueueNotifierUtils::Name(&playerMessages, "Player Messages");
+
+    QueueNotifierState inputMessages;
+    QueueNotifierUtils::Name(&inputMessages, "Input Messages");
+
+    QueueState playerQueue;
+    QueueUtils::Name(&playerQueue, "Player Read Message Queue");
+    QueueUtils::Init(&playerQueue);
+
+    QueueState inputQueue;
+    QueueUtils::Name(&inputQueue, "Input Read Message Queue");
+    QueueUtils::Init(&inputQueue);
+
+    QueueState appQueue;
+    QueueUtils::Name(&appQueue, "Application Read Message Queue");
+    QueueUtils::Init(&appQueue);
+
+    QueueNotifierUtils::Subscribe(&appMessages, &playerQueue);
+    QueueNotifierUtils::Subscribe(&appMessages, &inputQueue);
+
+    QueueNotifierUtils::Subscribe(&inputMessages, &playerQueue);
+    QueueNotifierUtils::Subscribe(&inputMessages, &appQueue);
+
+    // -------------------------------------------------------------------------
+    // Application
+    // -------------------------------------------------------------------------
+
     printf("Creating ApplicationState\n");
     fob::system::ApplicationState app(480, 320);
+    app.messageQueue = &appQueue;
+    app.messageNotifier = &appMessages;
 
     // -------------------------------------------------------------------------
     // Player
@@ -32,20 +68,10 @@ int main(int argc, char *argv[])
     player.width = 8;
     player.height = 16;
 
-    printf("Creating player write queue\n");
-    QueueNotifierState playerWriteQueue;
-    QueueNotifierUtils::Name(&playerWriteQueue, "playerWriteQueue");
-
-    printf("Creating player read queue\n");
-    QueueState playerReadQueue;
-    QueueUtils::Name(&playerReadQueue, "playerReadQueue");
-    QueueUtils::Init(&playerReadQueue);
-    QueueUtils::Subscribe(&playerReadQueue, &playerWriteQueue);
-
     printf("Creating player manager\n");
     manager::PlayerManagerState playerManager;
-    playerManager.messageQueue = &playerReadQueue;
-    playerManager.messageNotifier = &playerWriteQueue;
+    playerManager.messageQueue = &playerQueue;
+    playerManager.messageNotifier = &playerMessages;
     manager::PlayerManagerUtils::Add(&playerManager, &player);
 
     // -------------------------------------------------------------------------
@@ -55,20 +81,10 @@ int main(int argc, char *argv[])
     printf("Creating input\n");
     InputState input;
 
-    printf("Creating input write queue\n");
-    QueueNotifierState inputWriteQueue;
-    QueueNotifierUtils::Name(&inputWriteQueue, "inputWriteQueue");
-
-    printf("Creating input read queue\n");
-    QueueState inputReadQueue;
-    QueueUtils::Name(&inputReadQueue, "inputReadQueue");
-    QueueUtils::Init(&inputReadQueue);
-    QueueUtils::Subscribe(&inputReadQueue, &inputWriteQueue);
-
     printf("Creating input manager\n");
     manager::InputManagerState inputManager;
-    inputManager.messageQueue = &inputReadQueue;
-    inputManager.messageNotifier = &inputWriteQueue;
+    inputManager.messageQueue = &inputQueue;
+    inputManager.messageNotifier = &inputMessages;
     inputManager.input = &input;
 
     // -------------------------------------------------------------------------
