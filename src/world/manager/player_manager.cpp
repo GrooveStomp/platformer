@@ -28,9 +28,9 @@ namespace PlayerManagerUtils
 
         for (unsigned int i=0; i < manager->playerCount; i++)
         {
-            PlayerUtils::Update(manager->players[i], manager->readQueue, manager->writeQueue);
+            PlayerUtils::Update(manager->players[i], manager->messageQueue, manager->messageNotifier);
         }
-        QueueUtils::Clear(manager->readQueue);
+        QueueUtils::Clear(manager->messageQueue);
     }
 }
 

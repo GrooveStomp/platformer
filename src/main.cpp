@@ -42,8 +42,8 @@ int main(int argc, char *argv[])
 
     printf("Creating player manager\n");
     manager::PlayerManagerState playerManager;
-    playerManager.readQueue = &playerReadQueue;
-    playerManager.writeQueue = &playerWriteQueue;
+    playerManager.messageQueue = &playerReadQueue;
+    playerManager.messageNotifier = &playerWriteQueue;
     manager::PlayerManagerUtils::Add(&playerManager, &player);
 
     // -------------------------------------------------------------------------
@@ -63,8 +63,8 @@ int main(int argc, char *argv[])
 
     printf("Creating input manager\n");
     manager::InputManagerState inputManager;
-    inputManager.readQueue = &inputReadQueue;
-    inputManager.writeQueue = &inputWriteQueue;
+    inputManager.messageQueue = &inputReadQueue;
+    inputManager.messageNotifier = &inputWriteQueue;
     inputManager.input = &input;
 
     // -------------------------------------------------------------------------

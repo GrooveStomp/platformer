@@ -9,7 +9,7 @@ namespace fob {
 
 namespace InputUtils {
 
-    void Update(InputState* const input, const QueueState* const readQueue, QueueNotifierState* const writeQueue)
+    void Update(InputState* const input, const QueueState* const messageQueue, QueueNotifierState* const messageNotifier)
     {
         using namespace fob::system::QueueNotifierUtils;
 
@@ -17,22 +17,22 @@ namespace InputUtils {
         while (SDL_PollEvent(&keyevent)) {
             if (keyevent.type == SDL_KEYDOWN) {
                 if (keyevent.key.keysym.sym == SDLK_ESCAPE) {
-                    Send(writeQueue, InputAction::Quit);
+                    Send(messageNotifier, InputAction::Quit);
                 }
                 else if (keyevent.key.keysym.sym == SDLK_LEFT) {
-                    Send(writeQueue, InputAction::Left);
+                    Send(messageNotifier, InputAction::Left);
                 }
                 else if (keyevent.key.keysym.sym == SDLK_RIGHT) {
-                    Send(writeQueue, InputAction::Right);
+                    Send(messageNotifier, InputAction::Right);
                 }
                 else if (keyevent.key.keysym.sym == SDLK_UP) {
-                    Send(writeQueue, InputAction::Up);
+                    Send(messageNotifier, InputAction::Up);
                 }
                 else if (keyevent.key.keysym.sym == SDLK_DOWN) {
-                    Send(writeQueue, InputAction::Down);
+                    Send(messageNotifier, InputAction::Down);
                 }
                 else if (keyevent.key.keysym.sym == SDLK_SPACE) {
-                    Send(writeQueue, InputAction::Jump);
+                    Send(messageNotifier, InputAction::Jump);
                 }
             }
         }

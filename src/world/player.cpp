@@ -33,14 +33,14 @@ namespace PlayerUtils {
 
     }
 
-    void Update(PlayerState* const player, const fob::system::QueueState* const readQueue, fob::system::QueueNotifierState* const writeQueue)
+    void Update(PlayerState* const player, const fob::system::QueueState* const messageQueue, fob::system::QueueNotifierState* const messageNotifier)
     {
         using namespace fob::math;
         using namespace fob::math::Vec2Utils;
 
-        for (unsigned int i=0; i < readQueue->messageCount; i++)
+        for (unsigned int i=0; i < messageQueue->messageCount; i++)
         {
-            HandleEvent(player, readQueue->messages[i]);
+            HandleEvent(player, messageQueue->messages[i]);
         }
     }
 

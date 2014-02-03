@@ -14,8 +14,8 @@ namespace InputManagerUtils
         using namespace fob::input;
         using namespace fob::system;
 
-        InputUtils::Update(manager->input, manager->readQueue, manager->writeQueue);
-        QueueUtils::Clear(manager->readQueue);
+        InputUtils::Update(manager->input, manager->messageQueue, manager->messageNotifier);
+        QueueUtils::Clear(manager->messageQueue);
     }
 }
 

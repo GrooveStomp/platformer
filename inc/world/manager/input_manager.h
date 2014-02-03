@@ -19,8 +19,8 @@ struct InputManagerState
 {
     InputManagerState() {}
     fob::input::InputState* input;
-    fob::system::QueueState* readQueue;
-    fob::system::QueueNotifierState* writeQueue;
+    fob::system::QueueState* messageQueue;
+    fob::system::QueueNotifierState* messageNotifier;
 };
 
 namespace InputManagerUtils

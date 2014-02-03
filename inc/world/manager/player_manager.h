@@ -21,8 +21,8 @@ struct PlayerManagerState
     PlayerManagerState(): playerCount(0) {}
     PlayerState* players[UCHAR_MAX];
     unsigned char playerUuids[UCHAR_MAX][UUID_SIZE];
-    fob::system::QueueState* readQueue;
-    fob::system::QueueNotifierState* writeQueue;
+    fob::system::QueueState* messageQueue;
+    fob::system::QueueNotifierState* messageNotifier;
     unsigned int playerCount;
 };
 
