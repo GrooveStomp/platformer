@@ -14,7 +14,7 @@
 #include <string>
 
 namespace fob {
-    namespace interface {
+    namespace ui {
 
         class Hud {
             public:
@@ -41,13 +41,13 @@ namespace fob {
                 fob::math::Vec2 _pos;
                 bool _showing;
                 bool _done_showing;
-                bool _show; 
+                bool _show;
                 float _clock_alpha;
                 std::string _end_match_sound;
                 bool _end_match_sound_playing;
         };
 
-    } // namespace interface
+    } // namespace ui
 } // namespace fob
 
 #endif

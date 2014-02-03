@@ -7,7 +7,7 @@
 #ifndef IN_GAME_H
 #define IN_GAME_H
 
-#include "interface/interface.h"
+#include "ui/interface.h"
 #include "system/timer.h"
 #include <string>
 
@@ -16,7 +16,7 @@ namespace fob {
         class Sprite;
     }
 
-    namespace interface {
+    namespace ui {
 
         class Hud;
 

@@ -7,12 +7,12 @@
 #ifndef END_GAME_H
 #define END_GAME_H
 
-#include "interface/interface.h"
+#include "ui/interface.h"
 #include "system/timer.h"
 #include <SDL_opengl.h>
 
 namespace fob {
-    namespace interface {
+    namespace ui {
 
         class EndGame : public Interface {
             public:
@@ -40,7 +40,7 @@ namespace fob {
                 int _score2;
         };
 
-    } // namespace interface
+    } // namespace ui
 } // namespace fob
 
 #endif

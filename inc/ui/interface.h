@@ -11,7 +11,7 @@
 #include "system/unique.h"
 
 namespace fob {
-    namespace interface {
+    namespace ui {
 
         class Interface {
             public:
@@ -32,7 +32,7 @@ namespace fob {
                 unsigned int _id;
         };
 
-    } // namespace interface
+    } // namespace ui
 } // namespace fob
 
 #endif

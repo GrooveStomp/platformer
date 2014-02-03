@@ -7,12 +7,12 @@
 #ifndef FRONT_END_H
 #define FRONT_END_H
 
-#include "interface/interface.h"
+#include "ui/interface.h"
 #include "system/timer.h"
 #include <SDL_opengl.h>
 
 namespace fob {
-    namespace interface {
+    namespace ui {
 
         class FrontEnd : public Interface {
             public:
@@ -37,7 +37,7 @@ namespace fob {
                 float _y_coord;
         };
 
-    } // namespace interface
+    } // namespace ui
 } // namespace fob
 
 #endif
