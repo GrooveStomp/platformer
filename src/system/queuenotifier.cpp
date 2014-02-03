@@ -1,3 +1,5 @@
+#include <string.h>
+
 #include "system/queuenotifier.h"
 #include "system/queue.h"
 
@@ -29,6 +31,7 @@ namespace QueueNotifierUtils {
         }
 
         notifier.queues[notifier.queueCount] = &queue;
+        strncpy((char *)(notifier.queueUuids[notifier.queueCount]), (char *)(queue.uuid), 16);
         notifier.queueCount++;
     }
 

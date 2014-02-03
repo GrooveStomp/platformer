@@ -8,13 +8,20 @@ namespace fob {
 
 struct QueueState;
 
+/* The Queue Notifier works like Amazon SNS.
+ * It is a point of communication to subscribed queues.
+ * As far as implementation goes:
+ * - QueueNotifier stores a list of queues.  It holds a max of UCHAR_MAX
+ *   queues.
+ * - QueueNotifier also stores a list of UUIDs for each queue.  This is for
+ *   loading from memory.  Pointer locations will be incorrect during
+ *   different runs, so we validate first by UUID, then initialize the list
+ *   of pointers.
+ */
 struct QueueNotifierState {
     QueueNotifierState(): queueCount(0) {}
     unsigned int queueCount;
-    // TODO: AOMAN:
-    // If we're storing pointers, then what do we do about loading from disk?
-    // Memory locations will change, so the pointers will no longer be valid
-    // between saves.
+    unsigned char queueUuids[UCHAR_MAX][16];
     QueueState* queues[UCHAR_MAX];
 };
 
