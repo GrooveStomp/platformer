@@ -28,8 +28,8 @@ struct PlayerManagerState
 
 namespace PlayerManagerUtils
 {
-    void Add(PlayerManagerState& manager, PlayerState& player);
-    void Update(PlayerManagerState& manager);
+    void Add(PlayerManagerState* const manager, PlayerState* const player);
+    void Update(PlayerManagerState* const manager);
 }
 
         } // namespace manager

@@ -11,26 +11,26 @@ namespace fob {
 
 namespace PlayerManagerUtils
 {
-    void Add(PlayerManagerState& manager, PlayerState& player)
+    void Add(PlayerManagerState* const manager, PlayerState* const player)
     {
-        if (UCHAR_MAX == manager.playerCount) {
+        if (UCHAR_MAX == manager->playerCount) {
             return;
         }
 
-        strncpy((char *)(manager.playerUuids[manager.playerCount]), (char *)(player.uuid), UUID_SIZE);
-        manager.players[manager.playerCount] = &player;
-        manager.playerCount++;
+        strncpy((char *)(manager->playerUuids[manager->playerCount]), (char *)(player->uuid), UUID_SIZE);
+        manager->players[manager->playerCount] = player;
+        manager->playerCount++;
     }
 
-    void Update(PlayerManagerState& manager)
+    void Update(PlayerManagerState* const manager)
     {
         using namespace fob::system;
 
-        for (unsigned int i=0; i < manager.playerCount; i++)
+        for (unsigned int i=0; i < manager->playerCount; i++)
         {
-            PlayerUtils::Update(*manager.players[i], *manager.readQueue, *manager.writeQueue);
+            PlayerUtils::Update(manager->players[i], manager->readQueue, manager->writeQueue);
         }
-        QueueUtils::Clear(*manager.readQueue);
+        QueueUtils::Clear(manager->readQueue);
     }
 }
 

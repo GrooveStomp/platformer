@@ -1,10 +1,6 @@
 #ifndef FOB_WORLD_GAMESTATE_H
 #define FOB_WORLD_GAMESTATE_H
 
-#include "system/types.h"
-#include "input/input.h"
-#include "world/player.h"
-
 namespace fob {
     namespace world {
 
@@ -22,9 +18,9 @@ struct GameState
 
 namespace GameStateUtils
 {
-    void Update(GameState &state);
-    void Draw(const GameState &state);
-    bool ShouldExit(const GameState &state);
+    void Update(GameState* const state);
+    void Draw(const GameState* const state);
+    bool ShouldExit(const GameState* const state);
 }
 
     } // namespace world

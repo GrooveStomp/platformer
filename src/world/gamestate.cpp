@@ -13,17 +13,17 @@ namespace GameStateUtils
 {
     //------------------------------------------------------------------------
     //
-    void Update(GameState &state)
+    void Update(GameState* const state)
     {
         using namespace fob::world::manager;
 
-        InputManagerUtils::Update(*state.inputManager);
-        PlayerManagerUtils::Update(*state.playerManager);
+        InputManagerUtils::Update(state->inputManager);
+        PlayerManagerUtils::Update(state->playerManager);
     }
 
     //------------------------------------------------------------------------
     //
-    void Draw(const GameState &state)
+    void Draw(const GameState *state)
     {
         glClearColor(0.0, 0.0, 0.0, 1.0);
         // TODO: AOMAN: Need to synchronize this with ApplicationState
@@ -58,10 +58,10 @@ namespace GameStateUtils
 
     //------------------------------------------------------------------------
     //
-    bool ShouldExit(const GameState &state)
+    bool ShouldExit(const GameState* const state)
     {
         return false;
-        // return (state.input.action == fob::input::InputAction::Quit);
+        // return (state->input->action == fob::input::InputAction::Quit);
     }
 }
 

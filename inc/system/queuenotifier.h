@@ -28,8 +28,8 @@ struct QueueNotifierState {
 };
 
 namespace QueueNotifierUtils {
-    void Subscribe(QueueNotifierState& notifier, QueueState& queue);
-    void Send(const QueueNotifierState& notifier, const int message);
+    void Subscribe(QueueNotifierState* const notifier, QueueState* const queue);
+    void Send(const QueueNotifierState* const notifier, const int message);
 }
 
     } // namespace system

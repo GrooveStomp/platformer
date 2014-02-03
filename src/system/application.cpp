@@ -67,10 +67,10 @@ namespace ApplicationUtils {
         {
             if (TimerUtils::IsExpired(app.timer))
             {
-                fob::world::GameStateUtils::Update(state);
-                fob::world::GameStateUtils::Draw(state);
+                fob::world::GameStateUtils::Update(&state);
+                fob::world::GameStateUtils::Draw(&state);
 
-                if (fob::world::GameStateUtils::ShouldExit(state)) {
+                if (fob::world::GameStateUtils::ShouldExit(&state)) {
                     app.running = false;
                 }
 

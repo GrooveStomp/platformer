@@ -32,9 +32,9 @@ struct PlayerState
 //
 namespace PlayerUtils
 {
-    void Update(PlayerState &player, const fob::system::QueueState& readQueue, fob::system::QueueNotifierState &writeQueue);
-    void Copy(const PlayerState &other, PlayerState &player);
-    void Draw(const PlayerState &player, const GameState &state);
+    void Update(PlayerState* const player, const fob::system::QueueState* const readQueue, fob::system::QueueNotifierState* const writeQueue);
+    void Copy(const PlayerState* const other, PlayerState* const player);
+    void Draw(const PlayerState* const player, const GameState* const state);
 }
 
     } // namespace world

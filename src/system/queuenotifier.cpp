@@ -8,11 +8,11 @@ namespace fob {
 
 namespace QueueNotifierUtils {
 
-    bool AlreadySubscribed(const QueueNotifierState& notifier, const QueueState& queue)
+    bool AlreadySubscribed(const QueueNotifierState* const notifier, const QueueState* queue)
     {
-        for (unsigned int i=0; i < notifier.queueCount; i++)
+        for (unsigned int i=0; i < notifier->queueCount; i++)
         {
-            if (QueueUtils::Equal(*(notifier.queues[i]), queue))
+            if (QueueUtils::Equal(notifier->queues[i], queue))
             {
                 return true;
             }
@@ -20,26 +20,26 @@ namespace QueueNotifierUtils {
         return false;
     }
 
-    void Subscribe(QueueNotifierState& notifier, QueueState& queue)
+    void Subscribe(QueueNotifierState* const notifier, QueueState* const queue)
     {
         if (AlreadySubscribed(notifier, queue)) {
             return;
         }
 
-        if (notifier.queueCount >= UCHAR_MAX) {
+        if (notifier->queueCount >= UCHAR_MAX) {
             return;
         }
 
-        notifier.queues[notifier.queueCount] = &queue;
-        strncpy((char *)(notifier.queueUuids[notifier.queueCount]), (char *)(queue.uuid), UUID_SIZE);
-        notifier.queueCount++;
+        notifier->queues[notifier->queueCount] = queue;
+        strncpy((char *)(notifier->queueUuids[notifier->queueCount]), (char *)(queue->uuid), UUID_SIZE);
+        notifier->queueCount++;
     }
 
-    void Send(const QueueNotifierState& notifier, const int message)
+    void Send(const QueueNotifierState* const notifier, const int message)
     {
-        for (unsigned int i=0; i < notifier.queueCount; i++)
+        for (unsigned int i=0; i < notifier->queueCount; i++)
         {
-            QueueUtils::Send(*(notifier.queues[i]), message);
+            QueueUtils::Send(notifier->queues[i], message);
         }
     }
 

@@ -25,7 +25,7 @@ struct InputManagerState
 
 namespace InputManagerUtils
 {
-    void Update(InputManagerState& manager);
+    void Update(InputManagerState* manager);
 }
 
         } // namespace manager

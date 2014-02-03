@@ -39,7 +39,7 @@ struct InputState
 namespace InputUtils
 {
     using namespace fob::system;
-    void Update(InputState& input, const QueueState& readQueue, QueueNotifierState& writeQueue);
+    void Update(InputState* const input, const QueueState* const readQueue, QueueNotifierState* const writeQueue);
 }
 
     } // namespace input

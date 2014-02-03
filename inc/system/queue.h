@@ -4,6 +4,8 @@
 #include "system/types.h"
 
 #include <limits.h>
+#include <uuid/uuid.h>
+
 
 namespace fob {
     namespace system {
@@ -30,16 +32,16 @@ struct QueueState {
     unsigned char uuid[UUID_SIZE];
     unsigned int messageCount;
     unsigned int head;
-    int messages[UINT_MAX];
+    int messages[QUEUE_SIZE];
 };
 
 namespace QueueUtils {
-    void Init(QueueState& queue);
-    void Send(QueueState& queue, const int message);
-    void Subscribe(QueueState& queue, QueueNotifierState& notifier);
-    const int Read(QueueState& queue);
-    bool Equal(const QueueState& left, const QueueState& right);
-    void Clear(QueueState& queue);
+    void Init(QueueState* const queue);
+    void Send(QueueState* const queue, const int message);
+    void Subscribe(QueueState* const queue, QueueNotifierState* const notifier);
+    const int Read(QueueState* const queue);
+    bool Equal(const QueueState* const left, const QueueState* const right);
+    void Clear(QueueState* const queue);
 }
 
     }

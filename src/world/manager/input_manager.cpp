@@ -9,13 +9,13 @@ namespace fob {
 
 namespace InputManagerUtils
 {
-    void Update(InputManagerState& manager)
+    void Update(InputManagerState* const manager)
     {
         using namespace fob::input;
         using namespace fob::system;
 
-        InputUtils::Update(*manager.input, *manager.readQueue, *manager.writeQueue);
-        QueueUtils::Clear(*manager.readQueue);
+        InputUtils::Update(manager->input, manager->readQueue, manager->writeQueue);
+        QueueUtils::Clear(manager->readQueue);
     }
 }
 

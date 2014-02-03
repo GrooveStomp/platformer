@@ -9,7 +9,7 @@ namespace fob {
 
 namespace InputUtils {
 
-    void Update(InputState& input, const QueueState& readQueue, QueueNotifierState& writeQueue)
+    void Update(InputState* const input, const QueueState* const readQueue, QueueNotifierState* const writeQueue)
     {
         using namespace fob::system::QueueNotifierUtils;
 
